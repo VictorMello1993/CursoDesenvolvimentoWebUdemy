@@ -1,0 +1,13 @@
+							Uso do this em JavaScript
+
+Em várias linguagens de programação, geralmente fortemente tipadas, o uso do this é estático, sempre é definido
+a partir de uma classe em que foi definida. Porém em JavaScript, o contexto pode variar de acordo com a chamada
+da função. Para eliminar a possibilidade de alterar o contexto de execução a partir da chamada de uma função, utiliza-se
+a função bind()
+
+Em funções normais, aquelas definidas com "function", o this pode variar de contexto em que a função é chamada. Porém,
+em funções arrow, o this não varia de contexto de execução.
+
+
+Contexto léxico: Contexto no qual a função foi definida
+

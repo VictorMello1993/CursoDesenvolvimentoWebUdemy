@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IMPLEMENTAÇÃO DA FUNÇÃO MAP</title>
+<script type="text/javascript">
+
+Array.prototype.map2 = function(callback){
+	novoArray = [];
+	for(let i = 0; i < this.length; i++){
+		novoArray.push(callback(this[i], i, this));
+	}
+	return novoArray;
+}
+
+const carrinho = [
+    '{"Nome": "Borracha", "Preco": 3.45}',
+    '{"Nome": "Caderno", "Preco": 13.90}',
+    '{"Nome": "Lapis", "Preco": 1.25}',
+    '{"Nome": "Caneta", "Preco": 6.00}',
+]
+
+const carrinhoObjetos = carrinho.map2(function(e){
+    let obj = JSON.parse(e);
+    return obj.Preco;
+});
+
+document.write(carrinhoObjetos);
+
+</script>
+</head>
+<body>
+</body>
+</html>

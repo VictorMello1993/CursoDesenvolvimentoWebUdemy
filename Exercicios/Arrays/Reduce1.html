@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+const alunos = [{nome: 'Victor', nota: 7.5, matricula: 123},
+			  {nome: 'Pedro', nota: 4.0, matricula: 345},
+			  {nome: 'Victor', nota: 9, matricula: 567},
+			  {nome: 'Victor', nota: 6.0, matricula: 789}
+			 ];
+
+
+const resultado = alunos.map(a => a.nota.toFixed(1)).reduce(function(acumulador, valorAtual){
+	document.write(acumulador, valorAtual);
+	return acumulador + valorAtual;
+});
+
+
+document.write(resultado);
+
+</script>
+</head>
+<body>
+</body>
+</html>
