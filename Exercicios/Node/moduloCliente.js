@@ -9,6 +9,8 @@ const moduloA = require('./moduloA'); /*Usando o caminho relativo para referenci
 
 //Importando o moduloB.js
 const moduloB = require('./moduloB');
+const moduloC = require('./../Node/moduloC/moduloC')
+
 
 //Acessando os módulos importados
 console.log(moduloA.ola);
@@ -18,3 +20,4 @@ console.log(moduloA);
 console.log(moduloB.bomDia);
 console.log(moduloB.boaNoite());
 console.log(moduloB);
+console.log(moduloC);

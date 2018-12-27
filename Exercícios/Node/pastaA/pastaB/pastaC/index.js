@@ -1,0 +1,1 @@
+this.teste = 'Importado o móduloC';
