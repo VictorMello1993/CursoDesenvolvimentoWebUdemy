@@ -36,4 +36,4 @@ const soma = (total, valor) => total + valor;
 const numeros = [1,2,3,4,5,6];
 
 // console.log(numeros.reduce2(soma));
-console.log(numeros.reduce3(soma));
+console.log(numeros.reduce3(soma,21));
