@@ -18,7 +18,7 @@ middleware*/
 const exec = (ctx, ...midlewares) => {
     const execMidleware = indice => {
         midlewares && indice < midlewares.length &&
-        midlewares[indice](ctx, () => execMidleware(indice + 1)) //Chamada recursiva
+        midlewares[indice](ctx, () => execMidleware(indice + 1)) //Chamada recursiva da função next()
     }
     execMidleware(0)
 }
