@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercícios HTML</title>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1> 
+    </header>
+    <nav>
+        <a href="exercicios/teste.html">00 - Teste</a>
+        <a href="exercicios/temp.html">TEMP</a>
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        <br>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        //Obtendo um item de uma lista de tags. No caso está obtendo todas as tags <a>
+        document.querySelectorAll('a').forEach(link => {
+            //Obtendo o elemento pelo id (no caso, será o elemento da tag section)
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = function(e){
+                e.preventDefault() //Inibindo qualquer comportamento padrão do evento   
+                fetch(link.href) //Requisição AJAX para obter um link
+                .then(resp => resp.text())
+                .then(html => conteudo.innerHTML = html) 
+            }
+        })
+
+        /*No fim das contas, o evento de click está associado a uma função responsável
+        pela requisição AJAX em cima de um link para obter o conteúdo da página que é proveniente
+        da outra página HTML. Portanto, com AJAX, a página principal não fica perdida toda
+        vez que o usuário realiza o clique sobre o link de uma outra página.*/
+    </script>
+</body>
+</html>
