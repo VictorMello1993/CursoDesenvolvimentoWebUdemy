@@ -6,7 +6,88 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* Todos os elementos da página serão selecionados com o seletor universal *  */
+        /* *{
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Somente elementos marcados com a classe .tag serão selecionados */
+        /* .tag{
+            color: #ff0;
+            background-color: red;
+        } */
+        /*Selecionando elementos com id 'aprovados'  */
+        /* #aprovados{
+            color: #ff0;
+            background-color: red;
+        } */
+        /* Selecionandos elementos que são filhos diretos de elementos com id 'aninhado' */
+        /* #aninhado > div{
+            color: #ff0;
+            background-color: red;
+        } */
+        /* Selecionando section que é filho do elemento marcado com id 'aninhado',
+        desconsiderando o conceito de filho direto */
+        /* #aninhado section{
+            color: #ff0;
+            background-color: red;
+        } */
+        /* Selecionando irmãos adjacentes, ou seja, o irmão que está diretamente lado a lado */
+        /* p + ul{
+            color: #ff0;
+            background-color: red;
+        } */
+        /* Selecionando irmãos de maneira geral, que pertencem ao mesmo pai */
+        /* p ~ ol{
+            color: #ff0;
+            background-color: red;
+        } */
+        /* Selecionando elementos com atributo 'feira'
+        Usando ~= indica que serão selecionadas quaisquer elementos contendo atributo
+        feira com valor escritório. Isso é mais indicado para capturar elementos cujos atributos
+         possuem mais de um valor, um precedido de espaço (o uso da vírgula não irá funcionar)*/
+        /* [feira~=escritorio]{
+            color: #ff0;
+            background-color: red;
+        } */
+        /* Usando o *= irá procurar o texto contido no valor de um atributo específico. 
+        No caso, serão selecionados elementos cujo atributo feira contém o texto 'sa'*/
+        /* [feira*=sa]{
+            color: #ff0;
+            background-color: red;
+        } */
+        /* Selecionando elementos filhos. No caso irá selecionar o span que seja o primeiro filho
+        de qualquer outro elemento*/
+        /* span:nth-child(1){
+            color: #ff0;
+            background-color: red;
+        } */
+        /*Selecionando algum filho direto da section que seja filho ímpar */
+        /* section > :nth-child(odd){
+            color: #ff0;
+            background-color: red;
+        } */
+        /*Selecionando algum filho direto da section que seja filho par */
+        /* section > :nth-child(even){
+            color: #ff0;
+            background-color: red;
+        } */
+        /* Selecionando tanto os elementos filhos ímpares da section quanto os elementos ul */
+        /* section > :nth-child(odd), ul{
+            color: #ff0;
+            background-color: red;
+        } */
+        /* Selecionando o filho direto de um filho par da section */
+        /* section > :nth-child(even) label {
+            color: #ff0;
+            background-color: red;
+        } */
+        /* Selecionando o segundo span que é filho direto da section */
+        section > span:nth-of-type(2){
+            color: #ff0;
+            background-color: red;
+        }
     </style>
 </head>
 
@@ -29,7 +110,7 @@
             </ol>
             <div id='aninhado' class='tag'>
                 <div class="tag">
-                    <section class='tag'>
+                    <section class='tag nolabel'>
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>
