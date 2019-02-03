@@ -5,12 +5,25 @@
     <meta charset="UTF-8">
     <title>Herança</title>
     <style>
-        /* ... */
+        body{
+            font-family: 'Oswald', sans-serif;
+            font-size: 40px;
+            border: solid 3px red;
+            padding: 50px;
+        }
+
+        /* Herdando atributos que por padrão não são herdados. A herança, no caso será aplicada
+        tando no body quanto na div */
+        div{
+            border: inherit;
+            padding: inherit;
+        }
     </style>
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Herança</h1>
+    <h1 style="font-size: 3em;">Herança</h1>
     <div>Estou herdando</div>
 </body>
 
