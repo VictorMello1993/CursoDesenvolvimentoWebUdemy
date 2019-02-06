@@ -5,7 +5,86 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        /* A omissão da propriedade position indica que a posição é estática (static), ou seja, nenhum outro
+        elemento (no caso das divs) irá sobrepor o outro, pois cada componente considera as dimensões
+        de um componente anterior a ser renderizado na página*/
+        div{
+            font-size: 60px;
+            padding: 10px;
+            border: solid 5px #222;
+            margin: 10px;
+        }
+        
+        /* Como a posição ainda é static, indica que as propriedades de posicionamento (top e left) 
+        não são consideradas para renderizar
+         */
+        .static{
+            top: 100px;
+            left: 100px;
+            background-color: blue
+        }
+        
+        /* A posição fixed considera todas as propriedades de posicionamento dos componentes. Além disso,
+        é necessário explicitar a propriedade position como sendo fixed. A grande característica deste
+        tipo de posicionamente é o fato do componente com a propriedade position:fixed acompanhar o rolamento
+        da página em relação aos outros componentes. Logo, a posição é absoluta, ou seja, verifica todo
+        o viewport da página e o componente a ser renderizado sai da sua posição original e sobrepõe os
+        outros componentes ao mudar de posição. */
+        .fixed{
+            background-color: green;
+            position: fixed;
+            bottom: 30px;
+            right: 0px;
+            background-color: tomato;
+        }
+        /* A posição relativa não sobrepõe todos os componentes da página justamente por não se tratar
+        da posição absoluta. Neste caso, a posição relativa indica que o elemento com a propriedade 
+        position:relative será renderizado em função do último componente anterior a ele. */
+        .relative1{
+            position: relative;
+            left: 0px;
+            top: 0px;
+            background-color: red;
+        }
+        
+        /* A posição absoluta indica que o componente a ser renderizado não considera as dimensões dos
+        componentes anteriores. Portanto, irá sobrepor todos os outros elementos da página (isso
+        no caso o componente estiver diretamente contido no corpo da página (body) */
+        .absolute1{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background-color: violet;
+        }
+
+        .relative2{
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategrey;
+        }
+        
+        /* Neste caso, como existe um componente aninhado ao outro, a posição absoluta indica que 
+        o componente a ser renderizado está na posição absoluta em relação ao seu elemento pai. No caso,
+        essa div está posicionada de forma absoluta em relação a div pai a qual ele pertence. */
+        .absolute2{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+        
+        /* A posição stick indica que o componente será fixa após navegar a página pela barra de rolagem
+        atingindo o seu topo. */
+        .sticky{
+            position: sticky;
+            background-color: #777777;
+            top: 10px;
+        }
     </style>
 </head>
 
