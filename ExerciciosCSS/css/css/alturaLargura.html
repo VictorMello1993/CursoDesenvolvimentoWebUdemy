@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+        
+        html{
+            height: 100%;
+        }
         body {
             font-size: 40px;
             background-color: coral;
+            height: 100%;
+            margin: 0;
         }
 
         div {
@@ -17,12 +23,55 @@
         span {
             background-color: dodgerblue;
         }
+
+        span, div{
+            width: 50%;
+            height: 250px;   
+            height: 100%;
+            display: block; 
+        }
+
+        /* p{
+            background-color: red;
+            width: 100%;
+            height: 100%;
+        } */
+
+        /* Algumas observações importantes:
+        
+        1) Adicionando largura e altura com valores absolutos
+        (em pixels), se o elemento pai for o body, significa
+        que o tamanho do pai irá crescer de tamanho, assim
+        como adicionando novos elementos*/
+
+        /* 2) Valores de altura e lagura em %  representa /
+        medidas relativas. Nesse exemplo, a div está contido
+        no body, logo ocupará o espaço de body  */
+
+        /* 3) O body, por padrão ocupa 100% da largura da
+        tela do navegador, mas não ocupa 100% da altura */
+
+        /* Elementos com display inline desconsideram a largura
+        e altura, como span, ao contrário dos elementos com 
+        display block (div, p) */
+
+        /* Um comportamento estranho: Se a tag body ou html
+        tiver uma altura relativamente pequena, e todos os seus
+        elementos forem display block e com altura de 100%
+        do body, percebe-se que foi gerada a impressão
+        de que o body só ocupa o espaço somente 
+        para um dos elementos que já atingiu todo o body,
+        enquanto os outros isso não influencia. Teoricamente o body
+        era para ter a altura dobrada. */
+
+
     </style>
 </head>
 
 <body>
     <div>Título</div>
     <span>Subtítulo</span>
+    <!-- <p>teste</p> -->
 </body>
 
 </html>
