@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        *{
+            box-sizing: border-box;
+        }
         body {
             font-size: 45px;
+            margin: 0;
+            /* box-sizing: border-box;         */
         }
+
+        div{
+            background-color: yellow;
+            width: 100%;
+            height: 300px;
+            padding: 100px;
+            border: solid 20px;
+            /* box-sizing: inherit; */
+            
+        }
+
+        /* Por padrão, a maioria dos elementos do HTML
+           (inclusive a div) considera como tamanho a caixa que representa
+           o conteúdo (content-box), ou seja, desconsidera
+           a borda e o padding para gerar uma caixa. Se
+           Aplicado o padding, o border e a largura para
+           ocupar 100% do corpo da página, de fato a
+           div ocupa 100% do corpo, mas visualmente a tela
+           irá ocupar mais que 100% devido às propriedades
+           padding e border, pois como dito anteriormente,
+           apenas o conteúdo será considerado como tamanho da caixa. */
+
+        /* Por outro lado, se aplicar a propriedade
+        box-sizing:border-box, será considerada
+        da borda até o conteúdo para gerar uma caixa
+        com seu respectivo tamanho. */
+
+        /* Porém, se aplicar box-sizing: border-box
+        no body, não irá funcionar pois por padrão
+        as propriedades do div não são herdadas
+        do body. Portanto, aplicando a heração na div,
+        já resolveria esse problema. */
+
+        /* Uma outra alternativa também é utilizar seletor
+        universal * para aplicar box-sizing: border-box a todos
+        os elementos da página */
+
+
     </style>
 </head>
 <body>
