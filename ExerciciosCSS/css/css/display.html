@@ -5,7 +5,62 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        body{
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul{
+            padding: 0;
+        }
+
+        div{
+            background-color: seagreen;
+        }
+
+        span{
+            background-color: dodgerblue;
+        }
+
+        li{
+            background-color: purple;
+        }
+
+        /* Mantendo todos os elementos na mesma linha com
+        largura e altura especificadas */
+        /* ----------------------------------------------------- */
+        div, span, li, ul{
+            width: 50%;
+            width: 200px;
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+            display: inline-block;
+            display: inline;
+        }
+
+
+        /* ul{
+            display: inline-block;
+        } */
+
+        /* -----------------------------------------------------*/
+
+        /* Elementos com display inline não irão considerar
+        a largura e altura, ao contrário dos elementos com
+        display block */
+
+        /*Neste exemplo, mesmo aplicado o display inline para
+        manter todos os elementos na mesma linha, o elemento 
+        que representa a lista (ul) quebra a linha pois é 
+        display block e não foi aplicado no CSS*/
+
+        /* Para deixar todos os elementos display block na
+        mesma linha, utiliza-se a propriedade display:inline-block */
+
+
+
     </style>
 </head>
 
