@@ -12,6 +12,26 @@
             border: solid 5px;
             display: none;
         }
+
+        @media(max-width: 600px){
+            .muito-pequeno{
+                display: block;
+            }
+        }
+
+        /* Se a largura for menor que 1000px OU a orientação for do tipo retrato, aplique o css .pequeno-retrato */
+        @media(max-width: 1000px), (orientation:portrait){
+            .pequeno-retrato{
+                display: block;
+            }
+        }
+
+        /* Aplicando media query usando E. Se a largura do componente estiver fora do intervalo, o css .intervalo não será aplicada. */
+        @media(min-width: 500px) and (max-width: 1000px){
+            .intervalo{
+                display:block;
+            }
+        }
     </style>
 </head>
 <body>
