@@ -1,10 +1,24 @@
 <h1>Links</h1>
 
 <!-- URL absoluta -->
-<a href="http://www.google.com.br">Google 1</a><br> <!-- Redireciona o link na mesma aba --> 
+<a id="inicio" href="http://www.google.com.br">Google 1</a><br> <!-- Redireciona o link na mesma aba --> 
 <a href="http://www.google.com.br" target="_blank">Google 2</a><br><br> <!-- Navegando link para uma outra aba -->
 
 <!-- URL Relativa -->
-<a href="index.html">Voltar 1</a><br> <!--Acessando o arquivo da pasta atual-->
+<a id="Voltar1" href="index.html">Voltar 1</a><br> <!--Acessando o arquivo da pasta atual-->
 <a href="/index.html">Voltar 2</a><br> <!--Acessando o arquivo da pasta raíz da aplicação -->
-<a href="../index.html">Voltar 3</a><br> <!--Acessando o arquivo saindo de uma pasta para outra-->
+<a href="../index.html">Voltar 3</a><br> <!--Acessando o arquivo saindo de uma pasta corrente para outra-->
+
+<!-- Criando um link para enviar um email -->
+<a href="mailto:meuemail@gmail.com">Enviar</a><br><br>
+
+<span class="teste"></span>
+<div id="noticia" style="position:absolute;top:2000px;">
+    <h1>OLA MUNDO!</h1>
+    <p>Nao foi nada! =P</p>
+</div>
+
+<!-- Links para navegar automaticamente para a div noticia (âncora) -->
+<a href="#noticia">Noticia</a><br>
+<a href="#inicio">Inicio</a><br>
+<a href="#Voltar1">Inicio 2</a>
