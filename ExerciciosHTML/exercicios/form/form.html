@@ -1,5 +1,9 @@
 <h1>Formulário</h1>
-<form action="http://localhost:3003/usuarios" method="POST">
+<!-- Usando GET no formulário, os dados (parâmetros) irão aparecer na URL. Não é recomendável por risco de segurança. 
+    Portanto, utiliza-se o POST
+-->
+<form method="POST">
+    <input type="hidden" name="id" value="3">
     <input type="text" name="nome">
     <input type="password" name="senha">
     <textarea name="bio" id="" cols="30" rows="10"></textarea>
@@ -28,12 +32,17 @@
         <option value="c#">C#</option>
         <option></option>
     </select>
-    <button>Incluir</button>    
+    <button formaction=http://localhost:3003/usuarios>Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>    
 </form>
 
 <style>
-    input, textarea, button, select{
+    input, textarea, select{
         display: block;
+        margin-top: 10px;
+    }
+
+    button{
         margin-top: 10px;
     }
 
