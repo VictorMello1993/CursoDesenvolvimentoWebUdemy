@@ -1,0 +1,66 @@
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" 
+    alt="Muro da cidade" 
+    title="Muro da Cidade por Tarso Bessa"
+    width="513" height="342">
+</p>
+
+<p>
+    <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
+    alt="Intro Cod3r" 
+    >
+</p>
+
+<p class="circular">
+    <img src="http://files.cod3r.com.br/curso-web/imagem3.png" 
+    alt="Rio de Janeiro" height="342">
+</p>
+
+<p class="texto">
+  <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
+    alt="Avatar" height="50" align="left">
+    dsfdsfdsfds fds fsdsdfsdfdsfd sfdsfds fsf dsfsdf dsfsdsd sfsdfsddsffs
+    sdfdssdfdsf sf sdfdsfsd fdf sfsd fsdfs sdf dsf sdf dsf dsfsdfds fssd fsdfss
+    Dss SDF sfd SDFSf df SDF EDF sdf sDF SDFSDF DSF SDFSDf sdf sd sDF SDF DSF 
+    SAdf  fsd FSDFDS FSD ds FSFD SDFS DSFDSFSDFSDFsf  
+</p>
+
+<p class="cidade">
+
+</p>
+
+<p>
+    <picture>
+
+        <!-- Aplicando a media query, a imagem de baixo (imagem da tag img) será exibida na tela.
+        Mesmo tentando procurar a primeira imagem que não seja válida, com media query, a imagem posterior
+        será exibida, desde que seja válida. Caso não seja aplicada a media query, a imagem posterior
+        nunca é exibida exceto a legenda alternativa (da propriedade alt) -->
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+        media="(min-width:600px)"> 
+        <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo estreita">
+    </picture>
+</p>
+
+<style>
+    .circular{
+        width: 513px;
+    }
+
+    .texto{
+        width: 400px;
+    }
+
+    .texto img{
+        margin-right: 10px;
+    }
+
+    .cidade{
+        width: 513px;
+        height: 342px;
+        background-image: url('https://abrilviagemeturismo.files.wordpress.com/2019/01/gettyimages-717166755.jpg?quality=70&strip=info&w=920');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+</style>
