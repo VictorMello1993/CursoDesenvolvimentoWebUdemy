@@ -7,13 +7,19 @@
     <style>
         body{
             font-family: 'Oswald', sans-serif;
-            font-size: 40px;
+            font-size: 80px; /*Configuração de fonte também é, por padrão, 
+                               transmitida por herança aos seus elementos filhos*/
             border: solid 3px red;
             padding: 50px;
         }
 
         /* Herdando atributos que por padrão não são herdados. A herança, no caso será aplicada
         tando no body quanto na div */
+
+        /* OBS: as propriedades border e padding, por padrão, não são 
+                 transmitidas por herança para os elementos filhos do body.
+                 Para resolver esse problema, basta aplicar o border e padding
+                 com valor "inherit" nos filhos, conforme o CSS abaixo:*/
         div{
             border: inherit;
             padding: inherit;
