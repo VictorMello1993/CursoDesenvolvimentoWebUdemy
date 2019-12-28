@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        /* Aplicando o box-sizing para todos os elementos da página para*/        
         *{
             box-sizing: border-box;
         }
@@ -15,12 +16,11 @@
 
         div{
             background-color: yellow;
-            width: 100%;
+            width: 600px;
             height: 300px;
             padding: 100px;
             border: solid 20px;
-            /* box-sizing: inherit; */
-            
+            /* box-sizing: inherit;           */
         }
 
         /* Por padrão, a maioria dos elementos do HTML
@@ -42,8 +42,8 @@
         /* Porém, se aplicar box-sizing: border-box
         no body, não irá funcionar pois por padrão
         as propriedades do div não são herdadas
-        do body. Portanto, aplicando a heração na div,
-        já resolveria esse problema. */
+        do body. Portanto, aplicando a herança na div com box-sizing:inherit,
+        já resolve esse problema. */
 
         /* Uma outra alternativa também é utilizar seletor
         universal * para aplicar box-sizing: border-box a todos
