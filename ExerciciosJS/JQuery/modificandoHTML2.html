@@ -10,18 +10,23 @@
 
 <body class='conteudo exercicio'>
     <h1>Modificando HTML #02</h1>
-    <div id='div1'>1</div>
+    <div id='div1' class='div1'>1</div>
     <div id='div2'>2</div>
-    <div id='div3'>3</div>
+    <div id='div3'>3</div>  
+    <div id='div5' class='div1'>100</div>
     <p class='numero'>4</p>
     <p class='numero'>5</p>
     <script>
-        $('#div1').append(', 2')
-        $('#div1').prepend('0, ') //Colocando o conteúdo como primeiro da ordem da div        
-
+        // $('#div1').append(', 2')
+        // $('#div1').prepend('0, ') //Colocando o conteúdo como primeiro da ordem da div        
+        $('div.div1').append(', 2')
+        $('div.div1').prepend('0, ') //Colocando o conteúdo como primeiro da ordem da div        
+        $('#div5').append(', 200, 300')
 
         $('<span>, 3</span>').appendTo('#div1')
         $('<span>-1, </span>').prependTo('#div1')
+        $('#div5').css({'background-color': 'green'})
+        $('#div5').prev().remove();
 
         //Adicionando um parágrafo antes da div 'div2'
         $('#div2').before('<p>Antes de 2</p>')
@@ -50,7 +55,7 @@
         
         /*Removendo elemento da DOM que está antes da div3 
          e o que está antes da div4*/
-        $('#div3, #div4').prev().remove()
+        // $('#div3, #div4').prev().remove()
 
         /*OBS: cuidado ao utilizar o método remove, pois caso
                precise utilizar o elemento excluído é preciso 
