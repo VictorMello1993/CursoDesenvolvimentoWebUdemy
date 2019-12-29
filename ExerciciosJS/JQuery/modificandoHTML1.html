@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #01</h1>
+    <div id='conteudo1'></div>
+    <div id='conteudo2'></div>
+    <div id='conteudo3'></div>
+    <div>Sem ID!</div>
+
+    <script>
+        //Adicionando novos elementos HTML
+
+    //Conteúdo 1
+    //Criando um parágrafo dentro da div conteudo1
+    $('#conteudo1').append('<p>1</p>')
+
+    //Conteúdo 2
+    //Adicionando mais elementos HTML apartados em um array
+    const elementos = [
+        $('<li>').append('Arroz'),
+        $('<li>').append('Feijão'),
+        $('<li>').append('Carne')
+    ]
+    const lista = $('<ul><li>Sorvete</li></ul>').append(elementos)
+    $('#conteudo2').append(lista)
+    
+    //Conteúdo 3
+    // $('#conteudo3').append('<h1>1</h1>').append('<h1>2</h1>')
+                            //Ou
+    // $('#conteudo3').append('<h1>1</h1>', '<h1>2</h1>')
+                            //Ou
+     $('#conteudo3').append(['<h1>1</h1>', '<h1>2</h1>'])
+
+     //Substituindo o conteúdo HTML
+     $('#conteudo3').html('<h1>123</h1>')
+
+     //Utilizando escape no conteúdo para que o navegador interprete como um texto puro em vez do elemento HTML      
+     $('#conteudo3').text('<h1>123</h1>') 
+
+     //Alterando todas as divs com um único seletor
+     //substituindo o elemento anterior pelo novo
+     $('div[id]').html('<strong>Olá mundo!</strong>')      
+    </script>
+</body>
