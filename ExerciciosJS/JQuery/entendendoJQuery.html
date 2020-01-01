@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Entendendo JQuery</title>
+        <link rel="stylesheet" href="css/estilo.css" style="background-color: green; display: none;">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald&display=swap" style="background-color: green; display: none;">
+        <script src="js/jquery.js"></script>    
+    </head>
+    <body class="conteudo exercicio">
+        <h1>Entendendo JQuery</h1>
+        <div>1</div>
+        <div>2</div>
+    
+    <script>
+        //Selecionando objetos HTML, no caso as divs
+
+        //Usando $
+        $('div').hide(5000).show(5000).fadeOut(5000)    
+        console.log($('div').get(0)) //Obtendo o primeiro elemento div da DOM a partir do seletor $
+
+        //Utilizando a referência do JQuery como objeto
+        console.log($.isEmptyObject({nome: null}))
+        console.log($.inArray(3, [1, 2, 3])) //Buscando um elemento em um array usando JQuery.
+
+        //Criando plugins JQuery (métodos de extensão do JQuery)
+        $.fn.fundoVerde = function(){
+            this.css('background-color', 'green')
+            return this
+        }
+
+        $('body').fundoVerde().fadeOut(1000);
+
+        /*OBS: JQuery não trabalha com objetos que são da DOM, apenas objetos que são 
+               'decorados', através da extensão de objetos utilizando decorator*/
+            
+        //Usando a palavra 'jQuery'
+        // jQuery('div').hide(5000).show(5000).fadeOut(5000)    
+    </script>
+    </body>    
+</html>

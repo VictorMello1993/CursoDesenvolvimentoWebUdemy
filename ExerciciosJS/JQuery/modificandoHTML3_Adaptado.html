@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #03 (adaptado)</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #03 (adaptado)</h1>
+    <div id='conteudo'></div>
+    <script>
+        $(document).ready(function () {
+            const NOME = 'Nome'
+            const NOTA = 'Nota'
+
+            const alunos = [{ nome: 'Victor', nota: 8.4 },
+            { nome: 'Camilla', nota: 9.0 },
+            { nome: 'Vanderson', nota: 8.5 },
+            { nome: 'João', nota: 10 }]
+
+            const thNome = $('<th>').html(NOME)
+            const thNota = $('<th>').html(NOTA)
+
+            const cabecalho = $('<tr>').append(thNome, thNota)
+
+            const conteudoCSS = {
+                'color': '#000',
+                'background-color': '#fff',
+                'font-size': '1em'
+            }
+
+            const tabelaCSS = {
+                'border-collapse': 'collapse',
+                'border': 'solid 2px #000',
+            }
+
+            const cabecalhoCSS = {
+                'background-color': '#ffe4b5',
+            }
+
+            const linhas = alunos.map(function (a) {
+                const tdNome = $('<td>').html(a.nome)
+                const tdNota = $('<td>').html(a.nota)
+                return $('<tr>').append(tdNome, tdNota, cabecalho)
+            })
+
+            const tabela = $('<table id="boletim">').append(cabecalho, linhas).css('border', 'solid 2px #000')
+
+            $('#conteudo').append(tabela)
+
+            $('tr > th').css(cabecalhoCSS)
+            $('#conteudo').css(conteudoCSS)
+            $('table, tr').css(tabelaCSS)            
+        })        
+    </script>
+    <style>
+        tr:hover{
+            background-color: #d3d3d3;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #03</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #03</h1>
+    <div id='conteudo'></div>
+    <footer id="resultado">
+        <a href="./modificandoHTML3_Adaptado.html" style="color: #fff;">
+            Modificando HTML #3 (adaptado)
+        </a>
+    </footer>
+    <!-- <table id="boletim">
+        <tr id="cabecalho">
+            <th>Nome</th>
+            <th>Nota</th>
+        </tr>
+    </table> -->
+    <script>
+        const alunos = [{ nome: 'Victor', nota: 8.4 },
+        { nome: 'Camilla', nota: 9.0 },
+        { nome: 'Vanderson', nota: 8.5 },
+        { nome: 'João', nota: 10 }]
+
+//Desafio: Criar uma tabela com 2 colunas (nome e nota) e colocá-la em uma div
+
+//---------------------------Minha resolução----------------------------------------------------------------------------------------------
+        // alunos.forEach(function(a){
+        //     $('#cabecalho').after(`<tr><td>${a.nome}</td><td>${a.nota}</td></tr>`)
+        // })
+
+        // const cabecalho = {
+        //     'background-color' : '#ffe4b5',
+        //     'font-weight' : 'bold',             
+        // }
+
+        // const conteudo = {
+        //     'color': '#000',
+        //     'background-color': '#fff',
+        //     'font-size': '1em',     
+        // }
+
+        // const tabela = {
+        //     'border-collapse': 'collapse',
+        //     'border': 'solid 2px #000',                  
+        // }
+
+        // $('#boletim').wrapAll('<div id="conteudo"></div>')
+        // $('tr > th').css(cabecalho)
+        // $('#conteudo').css(conteudo)
+        // $('table, tr').css(tabela)
+//----------------------------------------------------------------------------------------------
+
+//--------------------------Correção--------------------------------------------------------------------------------------  
+        const linhas = alunos.map(function (a) {
+            const tdNome = $('<td>').html(a.nome)
+            const tdNota = $('<td>').html(a.nota)
+            return $('<tr>').append(tdNome, tdNota)
+        })
+
+        const tabela = $('<table>').append(linhas).css('border', 'solid 2px')
+        $('#conteudo').append(tabela)
+//--------------------------------------------------------------------------------------
+    </script>
+    <style>
+    </style>
+</body>

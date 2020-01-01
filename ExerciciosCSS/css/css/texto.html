@@ -11,10 +11,67 @@
             margin: 0;
         }
 
+        html{
+            font-size: 15px;
+        }
+
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        div{
+            font-size: 20px; /*Como possui font-size:2.2em para tag <p>, então será multiplicado 20 * 2.2 = 44px*/ 
+        }
+
+        p{
+            /* Valores padrões do tamanho da fonte: o padrão é 16px*/
+            /* font-size: 1em; */ /*Equivale a 16px*/
+            /* font-size: 100%; */ /*Equivale a 16px*/
+            /* font-size: 16px;  */
+            /* font-size: 12pt; */ /*Equivale a 16px*/
+
+            /* Unidades absolutas */
+            /* font-size: 100px; O tamanho do pixel é relativo, varia de acordo com a resolução do monitor */
+            /* font-size: 72pt; Pontos. 72 pontos é equivalente a 1 polegada, conforme a linha abaixo */
+            /* font-size: 1in 1 polegada  */
+            
+            /*Unidades relativas*/
+            font-size: 2.2em; /*Multiplica-se o tamanho padrão da fonte por 2.2 (Resultado: 35,2px). 
+                                Porém, se a fonte estiver dentro de uma tag pai, e a mesma for aplicado o font-size,
+                                então o filho também sofrerá modificações do font-size*/
+            font-size: 2.2rem; /*Neste caso, a referência da fonte é na raíz (tag <html>)*/
+
+            font-family: monospace;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: Verdana, sans-serif;
+            font-family: 'Indie Flower', cursive;
+
+            font-weight: 100;
+            font-style: italic;
+            text-transform: uppercase;
+            /* text-decoration: line-through underline overline; */
+            word-spacing: 30px;
+            /* letter-spacing: 15px; */
+            line-height: 3.0em;
+        }
+
+        .botao{
+            font-size: 30px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque{
+            color: #ffffff;
+            background: tomato;
+            box-shadow: 2px 2px 1px 1px #000
+        }
+
+        .destaque:active{
+            box-shadow: none;
         }
     </style>
 </head>

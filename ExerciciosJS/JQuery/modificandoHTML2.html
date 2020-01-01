@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #02</h1>
+    <div id='div1' class='div1'>1</div>
+    <div id='div2'>2</div>
+    <div id='div3'>3</div>  
+    <div id='div5' class='div1'>100</div>
+    <p class='numero'>4</p>
+    <p class='numero'>5</p>
+    <script>
+        // $('#div1').append(', 2')
+        // $('#div1').prepend('0, ') //Colocando o conteúdo como primeiro da ordem da div        
+        $('div.div1').append(', 2')
+        $('div.div1').prepend('0, ') //Colocando o conteúdo como primeiro da ordem da div        
+        $('#div5').append(', 200, 300')
+
+        $('<span>, 3</span>').appendTo('#div1')
+        $('<span>-1, </span>').prependTo('#div1')
+        $('#div5').css({'background-color': 'green'})
+        $('#div5').prev().remove();
+
+        //Adicionando um parágrafo antes da div 'div2'
+        $('#div2').before('<p>Antes de 2</p>')
+
+        //Adicionando um parágrafo depois da div 'div2'
+        $('#div2').after('<p>Depois de 2</p>')
+
+        //Adicionando um parágrafo antes da div 'div3'
+        $('<p>Antes do 3</p>').insertBefore('#div3')
+
+        //Adicionando um parágrafo depois da div 'div3'
+        $('<p>Antes do 3</p>').insertAfter('#div3')
+
+        /*OBS: funções before, after, insertBefore e insertAfter
+               são funções de criação de elementos HTML equivalentes*/                              
+
+
+        //Envolvendo todos os parágrafos com a classe 'numero' em suas respectivas divs
+        // $('p.numero').wrap('<div>')
+
+        //Envolvendo todos os parágrafos com a classe 'numero' em uma única div
+        $('p.numero').wrapAll('<div id="div4">')
+
+        //Limpando o conteúdo de uma div
+        $('#div4').empty()
+        
+        /*Removendo elemento da DOM que está antes da div3 
+         e o que está antes da div4*/
+        // $('#div3, #div4').prev().remove()
+
+        /*OBS: cuidado ao utilizar o método remove, pois caso
+               precise utilizar o elemento excluído é preciso 
+               recriá-lo manualmente. Logo, para este caso, 
+               é conveniente utilizar o empty para limpar
+               apenas o conteúdo de um elemento HTML para
+               reuso futuro.*/
+
+        //Substituindo todos os parágrafos que estão diretamente dentro do body pela div em questão
+        // $('<div>Substituto</div>').replaceAll('body > p')     
+                        //Ou
+        // $('body > p').replaceWith('<div>Substituto</div>')
+                        //Ou utilizando função de callback            
+        $('body > p').replaceWith(function(){
+            return $('<div>').html($(this).html()).append("!!!!")
+        })  
+
+        /*Neste caso, o uso do replaceWith com
+        função de callback é similar ao uso da função wrap, 
+        mas com a diferença de que está envolvendo apenas o 
+        conteúdo do parágrafo em uma div, em vez de 
+        envolver todo o elemento parágrafo conforme executado 
+        com a função wrap.*/                          
+    </script>
+</body>
