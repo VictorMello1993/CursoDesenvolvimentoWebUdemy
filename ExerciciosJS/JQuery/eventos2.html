@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Eventos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        input {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Eventos #02</h1>
+    <div id='div1'>1</div>
+    <div id="resultado1">?</div>
+    <br>
+    <input type="text" placeholder="Digite e Selecione">
+    <div id="resultado2">?</div>
+    <script>
+      const alternarDestaque = function()  {
+          $('#div1').toggleClass('destaque')          
+      }
+      $('#div1').hover(alternarDestaque)
+                    /*Ou 
+        através da função on() para trabalhar com mais de 
+        um evento em uma única chamada*/
+    //   $('#div1').on('mouseenter mouseleave', alternarDestaque)
+
+    /*A função one() determina que o evento será disparado
+      apenas uma única vez*/
+    $('#div1').one('mouseenter', event => alert('OBRIGADO!'))
+
+    //Evento de clique-duplo  
+    $('#div1').dblclick(event => $('#div1').fadeOut(1000).fadeIn(1000))  
+
+    //Redimensionando o tamanho da página usando JQuery
+    $(window).resize(function(e){
+        const l = $(window).width()
+        const h = $(window).height()
+
+        $('#resultado1').html(`Largura: ${l} - Altura: ${h}`)
+    })
+
+    //Evento de selecionar parte de um texto de um input
+    $(':input').select(function(event){
+        const inicio = event.target.selectionStart //Índice inicial do caracter de uma string selecionada do input
+        const fim = event.target.selectionEnd //Tamanho total da string obtida de um texto do input
+        $('#resultado2').html(event.target.value.substring(inicio, fim))
+    })
+
+    </script>
+</body>
