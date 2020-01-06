@@ -10,18 +10,21 @@
             mensagem: 'Em breve!',
             horario: '23:59:59'
         }, opcoes)
-
-    const horaDezena = $('<span class="digito">').html('0')
-    const horaUnidade = $('<span class="digito">').html('0')
-    const minutoDezena = $('<span class="digito">').html('0')
-    const minutoUnidade = $('<span class="digito">').html('0')
-    const segundoDezena = $('<span class="digito">').html('0')
-    const segundoUnidade = $('<span class="digito">').html('0')
-
-    const separadorHora = $('<span class="separador">').html(':')
-    const separadorMinuto = $('<span class="separador">').html(':')
+    
+    const digito = $('<span class="digito">').html('0')
+    const separador = $('<span class="separador">').html(':')
+    
+    const horaDezena = digito
+    const horaUnidade = digito
+    const minutoDezena = digito
+    const minutoUnidade = digito
+    const segundoDezena = digito
+    const segundoUnidade = digito
+    
+    const separadorHora = separador
+    const separadorMinuto = separador
     const mensagem = $('<div class="mensagem">').html(opcoesFinais.mensagem)
-
+    
     $(this).addClass('temporizador')
     $(this).append(horaDezena, horaUnidade, separadorHora, 
                     minutoDezena, minutoUnidade, separadorMinuto,
