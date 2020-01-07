@@ -41,9 +41,9 @@
 
     // const separadorHora = $('<span class="separador">').html(':')
     // const separadorMinuto = $('<span class="separador">').html(':')
-
+              
     const mensagem = $('<div class="mensagem">').html(opcoesFinais.mensagem)
-
+    
     $(this).addClass('temporizador')
 
     // $(this).append(horaDezena, horaUnidade, separadorHora, 
