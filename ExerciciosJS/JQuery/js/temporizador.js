@@ -10,26 +10,51 @@
             mensagem: 'Em breve!',
             horario: '23:59:59'
         }, opcoes)
+    
+    // const hora = {
+    //     horaDezena: '0',
+    //     horaUnidade: '0',
+    //     separadorHora: ':',
+    //     minutoDezena: '0',
+    //     minutoUnidade: '0',
+    //     separadorMinuto: ':',
+    //     segundoDezena: '0',
+    //     segundoUnidade: '0'
+    // }    
 
-    const horaDezena = $('<span class="digito">').html('0')
-    const horaUnidade = $('<span class="digito">').html('0')
-    const minutoDezena = $('<span class="digito">').html('0')
-    const minutoUnidade = $('<span class="digito">').html('0')
-    const segundoDezena = $('<span class="digito">').html('0')
-    const segundoUnidade = $('<span class="digito">').html('0')
+    const conteudo = `
+    <span class="digito">0</span>
+    <span class="digito">0</span>
+    <span class="separador">:</span>
+    <span class="digito">0</span>
+    <span class="digito">0</span>
+    <span class="separador">:</span>
+    <span class="digito">0</span>
+    <span class="digito">0</span>    
+    `
+    // const horaDezena = $('<span class="digito">').html('0')
+    // const horaUnidade = $('<span class="digito">').html('0')
+    // const minutoDezena = $('<span class="digito">').html('0')
+    // const minutoUnidade = $('<span class="digito">').html('0')
+    // const segundoDezena = $('<span class="digito">').html('0')
+    // const segundoUnidade = $('<span class="digito">').html('0')
 
-    const separadorHora = $('<span class="separador">').html(':')
-    const separadorMinuto = $('<span class="separador">').html(':')
+    // const separadorHora = $('<span class="separador">').html(':')
+    // const separadorMinuto = $('<span class="separador">').html(':')
+
     const mensagem = $('<div class="mensagem">').html(opcoesFinais.mensagem)
 
     $(this).addClass('temporizador')
-    $(this).append(horaDezena, horaUnidade, separadorHora, 
-                    minutoDezena, minutoUnidade, separadorMinuto,
-                    segundoDezena, segundoUnidade, mensagem)
+
+    // $(this).append(horaDezena, horaUnidade, separadorHora, 
+    //                 minutoDezena, minutoUnidade, separadorMinuto,
+    //                 segundoDezena, segundoUnidade, mensagem)
     
-    const regex = new RegExp(/(\d\d):(\d\d):(\d\d)/)
-    const horarioAlvo = regex.exec(opcoesFinais.horario)
-    // console.log(horarioAlvo)
+    $(this).append(conteudo.trim(), mensagem)
+
+    const html = conteudo.match(/<span.+>[0-9]<\/span>/g)
+    const regex = new RegExp(/(\d\d):(\d\d):(\d\d)/)    
+    const horarioAlvo = regex.exec(opcoesFinais.horario)    
 
     let temporizador = setInterval(() => {
         const agora = new Date()
@@ -38,19 +63,24 @@
         alvo.setMinutes(horarioAlvo[2])
         alvo.setSeconds(horarioAlvo[3])
 
-        const diferencaEmMili = alvo.getTime() - agora.getTime()
-        // console.log(diferencaEmMili)
+        const diferencaEmMili = alvo.getTime() - agora.getTime()        
 
         if(diferencaEmMili >= 0){
             const diferenca = regex.exec(new Date(diferencaEmMili).toISOString())
-            console.log(diferenca)
 
-            horaDezena.html(diferenca[1][0])
-            horaUnidade.html(diferenca[1][1])
-            minutoDezena.html(diferenca[2][0])
-            minutoUnidade.html(diferenca[2][1])
-            segundoDezena.html(diferenca[3][0])
-            segundoUnidade.html(diferenca[3][1])
+            $(html[0]).html(diferenca[1][0])
+            $(html[1]).html(diferenca[1][1])
+            $(html[2]).html(diferenca[2][0])
+            $(html[3]).html(diferenca[2][1])
+            $(html[4]).html(diferenca[3][0])
+            $(html[5]).html(diferenca[3][1])
+
+            // horaDezena.html(diferenca[1][0])
+            // horaUnidade.html(diferenca[1][1])
+            // minutoDezena.html(diferenca[2][0])
+            // minutoUnidade.html(diferenca[2][1])
+            // segundoDezena.html(diferenca[3][0])
+            // segundoUnidade.html(diferenca[3][1])
         }
         else{
             clearInterval(temporizador)
