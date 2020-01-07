@@ -52,7 +52,7 @@
     
     $(this).append(conteudo.trim(), mensagem)
 
-    const html = conteudo.match(/<span.+>[0-9]<\/span>/g)
+    const html = conteudo.match(/<span.+>\d<\/span>/g)
     const regex = new RegExp(/(\d\d):(\d\d):(\d\d)/)    
     const horarioAlvo = regex.exec(opcoesFinais.horario)    
 
