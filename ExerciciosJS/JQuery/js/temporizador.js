@@ -11,18 +11,21 @@
             horario: '23:59:59'
         }, opcoes)
 
-        
-        function MontarContador() {            
-            return [$('<span>').addClass('digito').append('0'),
-            $('<span>').addClass('digito').append('0'),
-            $('<span>').addClass('separador').append(':'),
-            $('<span>').addClass('digito').append('0'),
-            $('<span>').addClass('digito').append('0'),
-            $('<span>').addClass('separador').append(':'),
-            $('<span>').addClass('digito').append('0'),
-            $('<span>').addClass('digito').append('0')]
+
+        function MontarContador() {
+            let horario = []
+
+            for (let i = 0; i < 8; i++) {
+                if (i != 2 && i != 5) {
+                    horario.push($('<span>').addClass('digito').append('0'))
+                }
+                else {
+                    horario.push($('<span>').addClass('separador').append(':'))
+                }
+            }
+            return horario
         }
-        
+
         // const digito = '<span class="digito">'
         // const separador = '<span class="separador">'
 
@@ -44,14 +47,15 @@
         // const segundoDezena = $('<span class="digito">').html('0')
         // const segundoUnidade = $('<span class="digito">').html('0')
 
+        // $(this).append(horaDezena, horaUnidade, separadorHora, 
+        //                 minutoDezena, minutoUnidade, separadorMinuto,
+        //                 segundoDezena, segundoUnidade, mensagem)
+        
         const conteudo = MontarContador()
         const mensagem = $('<div class="mensagem">').html(opcoesFinais.mensagem)
 
         $(this).addClass('temporizador')
 
-        // $(this).append(horaDezena, horaUnidade, separadorHora, 
-        //                 minutoDezena, minutoUnidade, separadorMinuto,
-        //                 segundoDezena, segundoUnidade, mensagem)
 
         $(this).append(conteudo, mensagem)
 
