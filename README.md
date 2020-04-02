@@ -2,7 +2,7 @@
 
 Curso de desenvolvimento web com professor Leonardo Leitão, da plataforma COD3R, que ministra aulas na plataforma de cursos Udemy.
 
-Linguagens de programação ministradas:
+Exercícios e projetos desenvolvidos nas seguintes linguagens:
 
 
 *  Javascript
