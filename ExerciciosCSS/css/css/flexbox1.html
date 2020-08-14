@@ -6,22 +6,101 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+            margin: 5px;
+        }
+
+        .big {
+            font-size: 1.5em;
+        }
+
+        .flex-container {
+            /* Main axis (eixo x) */
+            /* -------------------------------------------------------------------------------------------------------------------------------------- */
+
+            /* Por padrão, o eixo padrão é na linha (eixo x) */
+            display: flex;
+
+            /* Alterando o eixo para o eixo das colunas (eixo y) */
+            flex-direction: column;
+
+            /* Invertendo a ordem dos elementos que foram criados no HTML em colunas */
+            flex-direction: column-reverse;
+
+            /* Além de inverter a ordem, deslocar os elementos para a direita, semelhante ao float:right*/
+            flex-direction: row-reverse;
+
+            /* Voltando para o que era antes */
+            flex-direction: row;
+
+            width: 50%;
+
+            /* Wrap irá quebrar linhas entre os elementos com flex */
+            flex-wrap: wrap;
+
+            /* Inverte o wrap. Começa do último elemento e quebrar linhas mesmo tendo espaços vazios*/
+            flex-wrap: wrap-reverse;
+
+            flex-wrap: row wrap;
+
+            height: 200px;
+
+            flex-flow: column-reverse wrap;
+            flex-flow: row wrap;
+
+            /* Justificando o conteúdo a partir da origem do eixo principal(main axis)*/
+            justify-content: flex-start;
+
+            /* Justificando o conteúdo a partir do final do eixo (cross axis)*/
+            justify-content: flex-end;
+
+            /* Justificando o conteúdo para o centro */
+            justify-content: center;
+
+            /* Justificando o conteúdo para que envolta dos itens fica com espaço uniforme*/
+            justify-content: space-around;
+
+
+            /* Justificando o conteúdo para que os itens fiquem espaçados um entre o outro*/
+            justify-content: space-between;
+            /* -------------------------------------------------------------------------------------------------------------------------------------- */
+
+            /* Cross axis (eixo Y) */
+            /* -------------------------------------------------------------------------------------------------------------------------------------- */
+            height: 400px;
+
+            align-items: stretch; /*Propriedade padrão de alinhamento dos itens*/
+            align-items: baseline; /*Os itens ficam alinhados a partir da base das fontes*/
+            align-items: flex-start; /*Os itens ficam alinhados por cima, a partir do próprio início*/
+            align-items: flex-end; /*Os itens ficam alinhados a partir do próprio fim */
+            align-items: center; /*Os itens ficam alinhados no centro*/
+
+            /* Isso só vai funcionar quando tiver mais de uma linha no container */
+            /* ---------------------------------------------------------------------------------------------------------------------------------------*/
+            align-content: flex-start;  /*Alinha o conteúdo a partir do início do container*/       
+            align-content: flex-end;   /*Alinha o conteúdo a partir do fim do container*/
+            align-content: center;     /*Alinha o conteúdo a partir do centro*/  
+            align-content: space-around; /*Alinha o conteúdo para que envolta dos itens fica com espaço uniforme*/     
+            align-content: space-between /*Alinha o conteúdo para os itens fiquem com um espaço entre o outro*/     
+            /* ---------------------------------------------------------------------------------------------------------------------------------------*/
+        }
     </style>
 </head>
 
 <body>
-    <div class="flex-container tag nolabel">
-        <div class="tag nolabel">1</div>
-        <div class="tag nolabel">2</div>
-        <div class="tag nolabel big">3</div>
-        <div class="tag nolabel">4</div>
-        <div class="tag nolabel">5</div>
-        <div class="tag nolabel">6</div>
-        <div class="tag nolabel">7</div>
-        <div class="tag nolabel">8</div>
-        <div class="tag nolabel">9</div>
-        <div class="tag nolabel">10</div>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div class="big">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
     </div>
     <script src="js/tag.js"></script>
 </body>
