@@ -6,16 +6,74 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div{
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div{
+            box-sizing: border-box;
+        }
+
+        .flex-container{
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        /*Selecionado o terceiro filho da classe flex container*/
+        .flex-container div:nth-child(3){
+            background-color: indianred;
+
+            /*Todos os items do flex-box possuem a order zero (padrão) */
+            /* Colocando a ordem 1, esse elemento  terá ordem maior do que os outros elementos e será exibido na última posição*/
+            order: 1;
+
+            /* Voltando para ordem no qual os elementos serão exibidos conforme o que foi definido no HTML */
+            order: 0;
+
+            /* Neste caso, este elemento passa a ser exibido na primeira posição */
+            order: -1;
+
+            /* Alinhando o própro elemento  CSS selecionado (no caso, a terceira div) */
+            align-self: center; /*Alinhando para o centro do container*/
+            align-self: flex-end; /*Alinhando para o fim do container*/
+            align-self: start; /*Alinhando para o início do container*/
+            align-self: stretch /*Padrão*/        
+        }
+
+        .flex-container div{
+            width: 100px;
+
+            /* flex-grow: o espaço vazio é preenchido de acordo com os pesos, e os elementos irão crescer de maneira uniforme.*/
+            flex-grow: 0; /*Os elementos não sofrerão alterações*/
+
+            flex-grow: 1; 
+        }
+
+        .flex-container div:nth-child(1){
+            flex-grow: 2; /*Somente o primeiro elemento que terá seu tamanho dobrado, enquanto os outros terão peso 1 atribuído no seletor anterior*/            
+        }
+
+        .flex-container{
+            width: 300px;
+
+            /* O quão encolhido fica os elementos proporcialmente */
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-last-child(1){
+            flex-shrink: 5;
+        }
     </style>
 </head>
 
 <body>
-    <div class="flex-container tag nolabel">
-        <div class="tag nolabel">1</div>
-        <div class="tag nolabel">2</div>
-        <div class="tag nolabel">3</div>
-        <div class="tag nolabel">4</div>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
     </div>
     <script src="js/tag.js"></script>
 </body>

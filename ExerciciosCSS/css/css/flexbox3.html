@@ -6,16 +6,50 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div{
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div{
+            box-sizing: border-box;
+        }
+
+        .flex-container{
+            display: flex;
+            /* flex-direction: column; */
+        }
+
+        .flex-container div{
+            /* A largura de todos os items do flex-box é de 100 px (largura se o main-axis é linha*/
+            /* Se definir flex-direction para column, a flex-basis irá representar a altura (height) de 100px para cada item do flex-box*/
+            flex-basis: 100px; 
+            width: 200px; /*Vai perder a importância*/
+        }
+
+        .flex-container div:nth-child(4){
+            /* Ordem: grow > shrink  > basis */
+            flex: 3 6 100px;
+
+            /* Isso é equivalente a: */            
+            /* flex-grow: 3;
+            flex-shrink: 6;
+            flex-basis: 100px; */
+        }
+
+        .flex-container{
+            width: 300px;
+            width: 600px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="flex-container tag nolabel">
-        <div class="tag nolabel">1</div>
-        <div class="tag nolabel">2</div>
-        <div class="tag nolabel">3</div>
-        <div class="tag nolabel">4</div>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
     </div>
     <script src="js/tag.js"></script>
 </body>
