@@ -35,11 +35,15 @@
             /* Neste caso, este elemento passa a ser exibido na primeira posição */
             order: -1;
 
-            /* Alinhando o própro elemento  CSS selecionado (no caso, a terceira div) */
-            align-self: center; /*Alinhando para o centro do container*/
-            align-self: flex-end; /*Alinhando para o fim do container*/
-            align-self: start; /*Alinhando para o início do container*/
-            align-self: stretch /*Padrão*/        
+            /* Alinhando o própro elemento  CSS selecionado marcado com display:flex (no caso, a terceira div) */
+
+            /* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */
+            /* aling-self: alinhando flex-itens (itens que foram marcados com display:flex) sempre no eixo transversal*/
+            /* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */            
+            align-self: center; /*Alinhando para o centro do eixo transversal*/
+            align-self: flex-end; /*Alinhando no fim do eixo transversal*/
+            align-self: start; /*Alinhando no início do eixo transversal*/
+            align-self: stretch /*Alinhamento padrão do eixo transversal*/        
         }
 
         .flex-container div{

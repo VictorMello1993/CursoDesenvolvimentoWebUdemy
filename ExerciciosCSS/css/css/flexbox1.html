@@ -20,62 +20,67 @@
             /* Main axis (eixo x) */
             /* -------------------------------------------------------------------------------------------------------------------------------------- */
 
-            /* Por padrão, o eixo padrão é na linha (eixo x) */
+            /* Por padrão, o eixo principal é na linha (eixo x) */
             display: flex;
 
-            /* Alterando o eixo para o eixo das colunas (eixo y) */
+            /* Alterando o eixo principal para o eixo das colunas (eixo y) */
             flex-direction: column;
 
-            /* Invertendo a ordem dos elementos que foram criados no HTML em colunas */
+            /* Alterando o eixo principal para o eixo das colunas (eixo y), mas com elementos organizados de maneira invertida*/
             flex-direction: column-reverse;
 
-            /* Além de inverter a ordem, deslocar os elementos para a direita, semelhante ao float:right*/
+            /* Alterando o eixo principal para o eixo das linhas (eixo y), mas com elementos organizados de maneira invertida, semelhante ao float: right*/
             flex-direction: row-reverse;
 
-            /* Voltando para o que era antes */
+            /* Voltando para o eixo padrão*/
             flex-direction: row;
 
             width: 50%;
 
-            /* Wrap irá quebrar linhas entre os elementos com flex */
+            /* Wrap irá quebrar linhas entre os elementos contidos no container (flexbox)*/
             flex-wrap: wrap;
 
             /* Inverte o wrap. Começa do último elemento e quebrar linhas mesmo tendo espaços vazios*/
             flex-wrap: wrap-reverse;
 
+            /* Mesma forma que o flex-wrap: wrap */
             flex-wrap: row wrap;
 
             height: 200px;
-
+            
+            /* Inverte o wrap. Começa do último elemento e quebrar colunas mesmo tendo espaços vazios */
             flex-flow: column-reverse wrap;
             flex-flow: row wrap;
 
-            /* Justificando o conteúdo a partir da origem do eixo principal(main axis)*/
+            /* Justificando o conteúdo do container a partir da origem do eixo principal*/
             justify-content: flex-start;
 
-            /* Justificando o conteúdo a partir do final do eixo (cross axis)*/
+            /* Justificando o conteúdo do container no final do eixo principal*/
             justify-content: flex-end;
 
-            /* Justificando o conteúdo para o centro */
+            /* Justificando o conteúdo do container para o centro do eixo principal*/
             justify-content: center;
 
-            /* Justificando o conteúdo para que envolta dos itens fica com espaço uniforme*/
+            /* Justificando o conteúdo do container para que os itens tenham espaço tanto no início quanto no final da linha/coluna (independente do eixo principal)*/
             justify-content: space-around;
 
 
-            /* Justificando o conteúdo para que os itens fiquem espaçados um entre o outro*/
+            /* Justificando o conteúdo para que os itens fiquem espaçados um entre o outro, sem espaço no início e no final da linha/coluna (independente do eixo principal)*/
             justify-content: space-between;
-            /* -------------------------------------------------------------------------------------------------------------------------------------- */
 
+            /* -------------------------------------------------------------------------------------------------------------------------------------- */
             /* Cross axis (eixo Y) */
             /* -------------------------------------------------------------------------------------------------------------------------------------- */
+
             height: 400px;
 
-            align-items: stretch; /*Propriedade padrão de alinhamento dos itens*/
+            /* align-items: alinha os itens sempre no eixo transversal */
+
+            align-items: stretch; /*Propriedade padrão de alinhamento dos itens no transversal*/
             align-items: baseline; /*Os itens ficam alinhados a partir da base das fontes*/
-            align-items: flex-start; /*Os itens ficam alinhados por cima, a partir do próprio início*/
-            align-items: flex-end; /*Os itens ficam alinhados a partir do próprio fim */
-            align-items: center; /*Os itens ficam alinhados no centro*/
+            align-items: flex-start; /*Os itens ficam alinhados a partir da origem do transversal*/
+            align-items: flex-end; /*Os itens ficam alinhados no fim do eixo transversal*/
+            align-items: center; /*Os itens ficam alinhados no centro do eixo transversal*/
 
             /* Isso só vai funcionar quando tiver mais de uma linha no container */
             /* ---------------------------------------------------------------------------------------------------------------------------------------*/
