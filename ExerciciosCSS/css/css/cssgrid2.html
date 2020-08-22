@@ -20,6 +20,46 @@
             border: solid 5px dodgerblue;
             background: #fff;
         }
+
+        body{
+            display: grid;
+
+            /* Dando nomes às células */
+            grid-template-columns: 
+                [inicio] 1fr 
+                [metade-1] 1fr 
+                [metade-2] 1fr [fim];
+            grid-template-rows: repeat(3, 1fr);     
+
+            /*Dando espaço entre as células  */
+            grid-column-gap: 20px; /*Dando espaço de 20px entre as colunas*/
+
+            grid-row-gap: 20px;  /*Dando espaço de 20px entre as linhas*/
+
+            grid-gap: 50px 10px; /*Dando 50px de gap nas linhas e 10px de gap nas colunas*/
+        }
+
+        .d1{
+            /* --------------------------------------------------------------------------------------------------------------------------- */
+            grid-column-start: metade-2;
+            grid-column-end: fim;
+            /* É equivalente a  */
+            grid-column: metade-2 / fim;
+            /* --------------------------------------------------------------------------------------------------------------------------- */            
+
+            /* --------------------------------------------------------------------------------------------------------------------------- */
+            grid-column: metade-1 / fim;
+            /* É equivalente a  */
+            grid-column-start: metade-1;
+            grid-column-end: fim;
+            /* --------------------------------------------------------------------------------------------------------------------------- */
+            grid-row: 1 / span 2;                                    
+
+            /* Ou então utilizar a propriedade grid-area */
+            /* A ordem da grid-area é: row-start > column-start > row-end > column-end */
+            grid-area: 1 / metade-1 / span 3 / fim;
+
+        }
     </style>
 </head>
 
