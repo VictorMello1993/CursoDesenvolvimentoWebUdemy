@@ -26,7 +26,7 @@ document.querySelectorAll('.tag').forEach(elemento => {
 
     // //Verificando se dentro de uma lista das classes da tag identificada contenha a classe nolabel
     if(!elemento.classList.contains('nolabel')){
-        const label = document.createElement('label') //Adicionando um elemento dentra da tag identificada
+        const label = document.createElement('label') //Adicionando um elemento dentro da tag identificada
         label.style.backgroundColor = colors.get(tagName)
         label.innerHTML = tagName
         elemento.insertBefore(label, elemento.childNodes[0]) /*Inserindo o label antes do 

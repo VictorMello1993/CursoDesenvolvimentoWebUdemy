@@ -44,31 +44,35 @@
             background-color: red;
         } */
         /* Selecionando elementos com atributo 'feira'
-        Usando ~= indica que serão selecionadas quaisquer elementos contendo atributo
-        feira com valor escritório. Isso é mais indicado para capturar elementos cujos atributos
+        [feira]{
+            color: #ff0;
+            background-color: #f77;
+        }
+        Usando ~= indica que serão selecionados quaisquer elementos contendo atributo
+        "feira" com valor "escritorio". Isso é mais indicado para capturar elementos cujos atributos
          possuem mais de um valor, um precedido de espaço (o uso da vírgula não irá funcionar)*/
         /* [feira~=escritorio]{
             color: #ff0;
             background-color: red;
         } */
         /* Usando o *= irá procurar o texto contido no valor de um atributo específico. 
-        No caso, serão selecionados elementos cujo atributo feira contém o texto 'sa'*/
+        No caso, serão selecionados elementos cujo atributo "feira" contém o texto "sa"*/
         /* [feira*=sa]{
             color: #ff0;
             background-color: red;
         } */
-        /* Selecionando elementos filhos. No caso irá selecionar o span que seja o primeiro filho
+        /* Selecionando elementos filhos. No caso, irá selecionar o span que seja o primeiro filho
         de qualquer outro elemento*/
         /* span:nth-child(1){
             color: #ff0;
             background-color: red;
         } */
-        /*Selecionando algum filho direto da section que seja filho ímpar */
+        /*Selecionando filhos diretos da section que sejam ímpares */
         /* section > :nth-child(odd){
             color: #ff0;
             background-color: red;
         } */
-        /*Selecionando algum filho direto da section que seja filho par */
+        /*Selecionando filhos diretos da section que sejam pares */
         /* section > :nth-child(even){
             color: #ff0;
             background-color: red;
@@ -83,7 +87,7 @@
             color: #ff0;
             background-color: red;
         } */
-        /* Selecionando o segundo span que é filho direto da section */
+        /* Selecionando o segundo span que é filho direto da section */                
         section > span:nth-of-type(2){
             color: #ff0;
             background-color: red;
