@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <a href='https://www.cod3r.com.br'>Cod3r</a>
+    </div>
+    <div id='primeiro'>
+        <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
+    </div>
+    <script>
+        const img = document.querySelector('img')
+        console.log('getAttribute', img.getAttribute('src')) //Acessando o valor do atributo src da img
+        console.log('src', img.src) //Acessando sem usar a função getAttribute (apenas usando a propriedade de um objeto)
+        console.log('["src"]', img['src']) //Acessando atributos através de uma chave do objeto
+        console.log('alt', img.alt)
+
+        console.log('Elemento "img"......................')
+        console.log('NodeType', img.nodeType) //Obtendo o tipo do nó (no caso, será do tipo 1 (elemento))
+        console.log('NodeName', img.nodeName) //Obtendo o nome do elemento selecionado
+
+        const src = img.getAttributeNode('src') //Acessando o nó que representa o atributo src
+        console.log('Atributo "src"......................') 
+        console.log('NodeType', src.nodeType) //Obtendo o tipo do nó (no caso, será do tipo 2 (atributo))
+        console.log('NodeName', src.nodeName) //Obtendo o nome do atributo
+        console.log('NodeValue', src.nodeValue) //Obtendo o valor contido no atributo
+
+        const link = document.querySelector('a')
+        console.log('Elemento a..........................')
+        console.log('href', link.href) //Acessando href do link
+        console.log('firstChild', link.firstChild) //Obtendo o nó que representa o primeiro filho do elemento link (tag <a>). No caso, será retornado um texto, que também faz parte do elemento da DOM.
+        console.log('firstChild.nodeType', link.firstChild.nodeType) //Será retornado o tipo 3 (elemento textual)
+        link.firstChild.nodeValue = 'Novo texto'
+    </script>
+</body>
+
+</html>
