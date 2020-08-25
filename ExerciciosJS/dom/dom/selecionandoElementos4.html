@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <script>
+        function log(){
+            console.log(this)
+        }
+
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        //Obtendo as ul dentro de uma respectiva div
+        const list = document.querySelector('div ul')
+        list.parentNode.log() //Selecionando o elemento pai da ul
+        list.childNodes.log() /*Obtendo os filhos da ul (neste caso, poderá retornar os elementos textuais com espaços vazios por retornar um NodeList. 
+                                Se deixar a tag definina na mesma linha, irá retornar apenas os elementos de tag)*/
+
+        const primeiroFilho = list.firstChild //Obtendo o primeiro filho da ul
+        primeiroFilho.log()                                            
+        primeiroFilho.nextSibling.log() //Obtendo o próximo irmão do primeiro elemento filho da ul
+
+        const ultimoFilho = list.lastChild //Obtendo o último filho da ul
+        ultimoFilho.log()
+        ultimoFilho.previousSibling.log() //Obtendo o irmão anterior ao último filho da ul
+
+        list.children.log() //Retorna a lista das tags filhas da ul, do tipo HTMLCollections
+        list.firstElementChild.log() //Selecionando o primeiro elemento filho da ul
+        list.lastElementChild.log() //Selecionando o último elemento filho da ul
+        list.parentNode.previousElementSibling.log() //Selecionando o elemento irmão anterior ao nó pai ul
+        list.parentNode.nextElementSibling.log() //Selecionando o próximo elemento irmão do pai ul
+        
+    </script>
+</body>
+</html>

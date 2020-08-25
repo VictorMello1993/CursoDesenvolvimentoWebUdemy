@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        // Selecionando componente com id="primeiro" e nela adicionar uma classe com nome "destaque"
+        document.getElementById('primeiro').classList.add('destaque')
+
+        // Selecionando componentes pelo nome da tag. No caso, está selecionando todas as divs
+        const divs = document.getElementsByTagName('div')
+
+        //Convertendo toda a coleção de elementos HTML (HTML Collections) em uma array normal
+        //Em seguida, em cada elemento, remover as classes que possuam nome "destaque"
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+        
+        // Em cada elemento HTML, converter em um array e percorrer cada um dos elementos para adicionar a classe "destaque"
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        //Selecionando elementos a partir da classe
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        for(let e of ultimosElementos){
+            e.classList.remove('destaque') //Removendo a classe "destaque"
+        }
+
+        // OBS: Objetos do tipo HTML Collection são iteráveis, logo utilizando for of funciona, mas forEach não irá funcionar pois este só funciona em um array normal
+
+    </script>
+</body>
+</html>

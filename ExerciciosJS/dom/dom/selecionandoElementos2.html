@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>              
+        // querySelector seleciona o primeiro elemento da página a partir de um seletor
+
+        //selecionando o primeiro elemento com id "primeiro" 
+        document.querySelector('#primeiro').classList.add('destaque') //Adicionando a classe "destaque" ao elemento selecionado
+
+        // Adicioando funções para selecionar e para deselecionar múltiplos elementos a partir de um seletor passado como parâmetro e adicionar ou remover a classe "destaque"
+        const selecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque')) 
+        const deselecionar = seletor => document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque')) 
+        
+        selecionar('div') //Selecionando todas as divs
+        deselecionar('*') //Deselecionando todos os elementos (a partir de um seletor universal)
+        
+        selecionar('.terceiro.ultimo') //Selecionando uma div com a classe "terceiro ultimo" e adicionar uma nova classe "destaque"
+        deselecionar('*')
+
+        selecionar(':not(#primeiro)') //Selecionando pseudo classe. Neste caso, está selecionando elementos que não sejam com id "#primeiro"
+        deselecionar('*')
+
+        selecionar(':nth-child(1)') //Selecionando elementos que sejam o primeiro filho de quaisquer elementos
+        deselecionar('*')
+
+        selecionar('div:nth-of-type(1)') //Selecionando o primeiro elemento do tipo div
+
+        deselecionar('*')
+        selecionar('[wb-attrib]') //Selecionando elementos com atributo "wb-attrib"
+
+        /*OBS: querySelectorAll obtém um NodeList, que implementa a função 
+        forEach, mas não implementa funções map, filter e reduce, onde é 
+        necessário converter para um array normal*/
+
+    </script>
+</body>
+</html>
