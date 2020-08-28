@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Classes</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        Classes
+    </div>
+    <script>
+        //Obtendo a lista de classes contidas na div
+        const classes = document.querySelector('div').classList
+
+        classes.add('destaque') //Adicionando a classe 'destaque'
+        classes.remove('destaque') //Removendo a classe 'destaque'
+        classes.toggle('destaque') 
+        console.log(classes.contains('destaque')) //Verificando se o valor 'destaque' está contida na lista de classes
+        console.log(classes.length) //Verificando o tamanho da lista de classes
+        classes.toggle('destaque') 
+        console.log(classes.length)
+        
+        classes.add('destaque1')
+        classes.add('destaque2')
+        console.log(classes.length)
+
+        for(let c of classes){
+            console.log(c)
+        }
+
+        /*Toggle() realiza alternância entre a criação e remoção das classes.
+                   Uma vez realizada a Toggle() a partir de uma classe já 
+                   existente, ela a remove, e vice-versa*/
+
+        /*O tipo do objeto da lista de classes é do tipo DOMTokenList.
+          Ela é um iterator, ou seja, é possível executar o laço FOR,
+          assim como ela implementa forEach. Porém, não implementa as 
+          funções map, filter, reduce, slice entre outras funções
+          que são acessíveis somente a um array normal. Portanto, 
+          seria preciso converter esse objeto para um array normal.*/
+
+          classes.forEach(c => console.log(c))
+        </script>
+</body>
+
+</html>

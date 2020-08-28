@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log('Elemento "ul"................')
+        console.log('childNodes', lista.childNodes)
+        console.log('destino', lista.destino) //undefined pois se trata de uma propriedade personalizada
+
+        //Porém... usando getAttribute irá considerar as propriedades personalizadas, portanto irá funcionar
+        console.log('getAttribute', lista.getAttribute('destino'))
+
+        console.log('hasAttribute', lista.hasAttribute('destino')) //Verificando se o componente possui atributo
+
+        lista.setAttribute('destino', 'empresa') //Setando o valor da propriedade personalizada 'destino' com valor 'empresa'        
+        lista.setAttribute('status', 'aberto') //Criando a propriedade personalizada 'status' e atribuindo o valor 'aberto' a ela
+
+        lista.removeAttribute('destino') //Removendo a propriedade 'destino'
+
+        console.log(lista.dataset.urgencia) //Acessando atributos personalizados que começam com "data-"
+        lista.dataset.urgencia = 4
+        console.log(lista.getAttribute('data-urgencia'))  //Alternativa à linha anterior
+        
+        //CUIDADOS:
+        /*PS1: Não é possível acessar diretamente as propriedades personalizadas
+              usando "data-" em notação ponto (.), pois viola a 
+              declaração de variáveis em JS, que não pode conter hífen 
+              no meio. Só é possível acessar dentro de uma string. 
+              Por esse motivo, utiliza-se o atributo dataset com a 
+              notação ponto (.)*/              
+
+
+        /*PS2: Em formulários, quando se tem o atributo "for", não é
+               possível acessar através da notação ponto (.), pois
+               se trata de uma palavra reservada da linguagem e não
+               se pode ter identificadores de variáveis cujo nome
+               é uma palavra reservada. Portanto, teria que acessar 
+               utilizando htmlFor*/
+
+        const label = document.querySelector('label')               
+        // console.log(label.for) //Erro! 'for' é a palavra reservada da linguagem
+
+        console.log(label.htmlFor) //Sucesso!
+        //Ou...
+        console.log(label.getAttribute('for')) //Sucesso
+
+    </script>
+</body>
+
+</html>
