@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>        
+        <!-- Forma explícita - Trabalhar com eventos alterando no HTML -->
+        <!-- onclick="navegarEm5s(event)" -->
+        <a espera-pouco href="https://google.com.br">Google</a>
+    </div>
+    <script>
+        function navegarEm5s(e){
+            e.preventDefault() //Prevenindo o comportamento padrão de um evento
+            console.log('Saindo em 5s...')
+            setTimeout(() => {
+                const link = e.target
+                window.location.href = link.href //Substituindo o endereço do link na barra de endereço (window.location.href) do navegador
+            }, 5000)
+        }   
+
+        //Forma implícita - Trabalhar com eventos selecionando elementos do HTML (via JavaScript)
+        const a = document.querySelector('[espera-pouco]')
+        a.onclick = navegarEm5s
+
+    </script>
+</body>

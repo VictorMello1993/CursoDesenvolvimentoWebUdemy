@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <p>Texto Inicial</p>
+    </div>
+    <script>
+        const div = document.querySelector('div')
+        div.innerHTML = 'Texto alterado' //Substituindo tudo o que tiver de texto DENTRO de uma div pelo novo texto. Inclusive, a tag associada ao texto original também é suprimida (no caso, a tag <p> onde guardava 'Texto inicial')
+        // div.outerHTML = 'Texto alterado' //Substituindo o texto contido na div (incluindo a própria div) pelo novo texto.
+
+        div.insertAdjacentHTML('beforebegin', '<p>Antes início</p>') //Antes do início da div, adicionar o parágrafo
+        div.insertAdjacentHTML('afterbegin', '<p>Depois início</p>')  //Depois do início da div, adicionar um novo parágrafo
+        div.insertAdjacentHTML('beforeend', '<p>Antes fim</p>') //Antes do fim da div, adicionar um novo parágrafo    
+        div.insertAdjacentHTML('afterend', '<p>Depois fim</p>') //Depois do fim da div, adicionar um novo parágrafo   
+        
+        console.log(div.innerText) //Mostrando somente os textos puros contidos nos elementos HTML, sem mostrar as tags
+        console.log(div.innerHTML) //O innerHTML mostra os textos incluindo as tags associadas a elas
+
+    </script>
+</body>
+
+</html>

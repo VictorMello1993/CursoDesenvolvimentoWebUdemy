@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>Elemento</div>
+    <script>
+        const item = document.querySelector('div')
+        item.style.position = 'absolute'
+        
+        item.onmousemove = e => {
+            const item = e.target //e.target = elemento que disparou evento
+            item.style.cursor = 'move' //Mudando o estilo do cursor
+
+            //Se houve um clique no botão do mouse
+            // item.clientheight = altura do elemento que disparou o evento
+            // event.clientY; e.clientX => representam os eixos da tela (eixo y e eixo x, respectivamente)
+            if(e.buttons){
+                item.style.top = `${e.clientY - (item.clientHeight / 2)}px`
+                item.style.left = `${e.clientX - (item.clientWidth / 2)}px`
+            }
+        }
+    </script>
+</body>

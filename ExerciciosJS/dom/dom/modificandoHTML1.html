@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <script>
+        const body = document.querySelector('body')
+
+        //Criando uma div
+        const div1 = document.createElement('div')
+        
+        div1.classList.add('destaque') //Adicionando a classe 'destaque'
+        div1.innerHTML = 'Primeiro' //Acrescentando o conteúdo ao HTML com o texto 'Primeiro'
+        
+        //Criando uma outra div
+        const div2 = document.createElement('div')
+
+        //Adicionando um atributo à segunda div
+        div2.setAttribute('wm-atributo', 'valor')
+        div2.innerHTML = 'Segundo' //Acrescentando o conteúdo ao HTML com o texto 'Segundo'
+
+        //Criando um parágrafo
+        const p = document.createElement('p')
+        p.innerHTML = 'Terceiro' //Acrescentando o conteúdo ao HTML com o texto 'terceiro'
+        
+        //Criando uma terceira div
+        const div3 = document.createElement('div')
+        div3.appendChild(p) //Atribuindo o parágrafo como último filho da terceira div
+
+        //Acrescentando os elementos recém-adicionados na DOM ao body
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        const texto = document.createTextNode('Antes...')
+        div3.insertBefore(texto, div3.childNodes[0]) //Inserindo um elemento de forma criteriosa, ou seja, especificando a posição do elemento filho em que um determinado elemento será adicionado antes.
+                                                     //Diferentemente do appendChild, que só acrescenta um elemento filho em forma de pilha, ou seja, o que estiver inserido pelo appendChild, este será o último filho
+
+        //Clonando a div3
+        const div4 = div3.cloneNode(true) //true se a clonagem for profunda, ou seja, não somente o próprio elemento como também os seus filhos serão clonados. Se for falso, os elementos filhos não serão clonados, somente o pai.
+        body.appendChild(div4)     
+        body.removeChild(div3) //Removendo um elemento filho do body
+        
+    </script>
+</body>
+
+</html>
