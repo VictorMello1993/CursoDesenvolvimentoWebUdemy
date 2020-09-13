@@ -59,7 +59,7 @@ function Barriers(height, width, gap, space, addPoint){
         this.pairs.forEach(pair => {
             pair.setX(pair.getX() - offset)
 
-            //Quando um par de canos sair do jogo (pelo lado esquerdo da tela), será deslocado até o final da tela (no lado direito) até surgirem novamente os mesmos canos
+            //Quando um par de canos sair do jogo (pelo lado esquerdo da tela), será deslocado até o final da tela (no lado direito) até surgirem novamente.
             if(pair.getX() < -pair.getWidth()){
                 pair.setX(pair.getX() + space * this.pairs.length)
                 pair.randomGaps() //À medida que os canos resurgem, os mesmos devem aparecem com posições diferentes, de maneira aleatória, para evitar que apareçam sempre os mesmos canos (no sentido de aparecerem sempre com as mesmas posições)   
