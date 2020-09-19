@@ -1,0 +1,16 @@
+db.estados.insert({nome: "Acre", sigla: "AC", regiao: "Norte"})
+db.estados.save({nome: "Rio de Janeiro", sigla: "RJ", regiao: "Sudeste", populacao: 654654654})
+db.estados.insert({ 
+    nome: "São Paulo", 
+    sigla: "SP", 
+    regiao: "Sudeste", 
+    cidades:[{ 
+        nome: "Jundiaí", 
+        area: 210.9, 
+        populacao: 600000 
+        }] 
+})
+
+db.estados.find()
+db.estados.find().pretty()
+db.help()

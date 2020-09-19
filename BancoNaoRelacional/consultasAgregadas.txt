@@ -1,0 +1,5 @@
+Consultas agregadas no MongoDB seguem a lógica de estágios de pipeline, onde uma pipeline corresponde a uma tubulação onde os dados
+serão transformados em outros dados pelos estágios, que são os filtros aplicados neles. Ao final de uma pipeline terá o resultado
+com os dados desejados após passar por todos os estágios.
+
+Mais informações: https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/

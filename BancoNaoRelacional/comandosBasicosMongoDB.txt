@@ -1,0 +1,48 @@
+mongo -version: Mostra a versão atual do MongoDB instalada
+
+mongod: inicializa o banco de dados do MongoDB
+
+help: mostra todas as opções de comandos disponíveos do MongoDB (ou alternativamente digitar o comando "mongo db." + pressionar TAB 2x)
+
+show dbs: mostra todos os bancos (bases) de dados disponíveis (por padrão são bancos "admin", "config" e "local")
+
+use: ativa uma base de dados mesmo que não existam. Neste caso, se o banco não existe, o mongoDB o cria.
+
+db.createCollection('nome_tabela'): cria uma coleção de dados (tabela)
+
+show collections: mostra todas coleções (tabelas) disponíveis em um banco (PS: MongoBS é case sensitive)
+
+db.nome_colecao.drop(): exclui uma coleção
+
+db.nome_colecao.insert(objeto_ou_JSON): insere um registro em uma coleção, mesmo não existindo. Se ela não existir, será criada automaticamente já com os dados inseridos em um único comando
+
+db.nome_colecao.save(objeto_ou_JSON): insere ou atualiza registro em uma coleção, mesmo não existindo. Se ela não existir, será criada automaticamente já com os dados inseridos ou atualizados, em um único comando.
+
+                    PS: como é um banco sem esquemas, é indiferente ter um atributo a mais ou a menos em uma coleção, se os nomes dos atributos são diferentes, etc. Então, ela acaba criando caso não exista.
+
+db.nome_colecao.find({filtro}, {atributo1: 1, atributo2: 1, ..., atributon: 1}): Verifica os registros salvos em uma coleção com base em uma condição (filtro). Se não informar nenhum filtro, por padrão, irá trazer todos os dados.           
+
+db.nome_colecao.find({filtro}, {atributo1: 1, atributo2: 1, ..., atributon: 1}).pretty(): Verifica e formata os registros salvos em uma coleção para a melhor visualização no terminal.
+
+            O primeiro parâmetro é um objeto que representa a condição da consulta (filtro), já o segundo, um objeto que determina quais atributos serão visualizados na consulta.
+            O valor 1 indica que o atributo será visível na consulta, enquanto que o valor 0 indica que o atributo não será visível na consulta.
+            Por padrão, será retornado com {_id: 1} se não informar. Para ocultá-lo, basta colocar {_id: 0}
+
+Cada registro representa um documento em formato JSON. MongoDB é o banco de dados baseado em documentos
+
+Ao criar um registro, por padrão é inserido automaticamente um id com valor em hash se não informá-lo manualmente
+
+db.nome_colecao.findOne({filtro}): Busca o primeiro registro da coleção
+
+Operadores relacionais
+    $or $and
+    sintaxe: db.nome_colecao.find({$or: [{atributo1: valor1}, {atributo2: valor2}]})
+    sintaxe: db.nome_colecao.find({$and: [{atributo1: valor1}, {atributo2: valor2}]})
+
+Operador $exists: verifica se um atributo está contido em uma coleção
+        sintaxe: db.nome_colecao.find({nome_atributo: {$exists: true}})
+
+Consultas paginadas:
+    skip(nesimo_registro): realiza a consulta "pulando" o n-ésimo registro no resultado
+    limit(numero_registros): realiza a consulta limitando o número de regitros a serem considerados no resultado
+    count(): retorna o número de registros em uma coleção

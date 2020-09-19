@@ -1,0 +1,29 @@
+ db.estados.insert({_id: new ObjectId(), nome: "São Paulo", sigla: "SP", regiao: "Sudeste", Cidades: [{ _id: new ObjectId(), nome: "Campinas", area: 795.7, prefeito: "Jonas Donizette", populacao: 1081000}, {_id: new ObjectId(), nome: "Guarulhos", populacao: 1325000}, {_id: new ObjectId(), nome: "Sorocaba", distanciapopulacional: 
+87, populacao: 644919}]})
+db.estados.find().pretty()
+{
+        "_id" : ObjectId("5f667b52762f0582d077e65b"),
+        "nome" : "São Paulo",
+        "sigla" : "SP",
+        "regiao" : "Sudeste",
+        "Cidades" : [
+                {
+                        "_id" : ObjectId("5f667b52762f0582d077e65c"),
+                        "nome" : "Campinas",
+                        "area" : 795.7,
+                        "prefeito" : "Jonas Donizette",
+                        "populacao" : 1081000
+                },
+                {
+                        "_id" : ObjectId("5f667b52762f0582d077e65d"),
+                        "nome" : "Guarulhos",
+                        "populacao" : 1325000
+                },
+                {
+                        "_id" : ObjectId("5f667b52762f0582d077e65e"),
+                        "nome" : "Sorocaba",
+                        "distanciapopulacional" : 87,
+                        "populacao" : 644919
+                }
+        ]
+}
