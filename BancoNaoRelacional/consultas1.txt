@@ -1,0 +1,26 @@
+db.nome_colecao.find({filtro}, {atributo1: 1, atributo2: 1, ..., atributon: 1}): Verifica os registros salvos em uma coleção com base em uma condição (filtro). Se não informar nenhum filtro, por padrão, irá trazer todos os dados.           
+
+db.nome_colecao.find({filtro}, {atributo1: 1, atributo2: 1, ..., atributon: 1}).pretty(): Verifica e formata os registros salvos em uma coleção para a melhor visualização no terminal.
+
+            O primeiro parâmetro é um objeto que representa a condição da consulta (filtro), já o segundo, um objeto que determina quais atributos serão visualizados na consulta.
+            O valor 1 indica que o atributo será visível na consulta, enquanto que o valor 0 indica que o atributo não será visível na consulta.
+            Por padrão, será retornado com {_id: 1} se não informar. Para ocultá-lo, basta colocar {_id: 0}
+
+Cada registro representa um documento em formato JSON. MongoDB é o banco de dados baseado em documentos
+
+Ao criar um registro, por padrão é inserido automaticamente um id com valor em hash se não informá-lo manualmente
+
+db.nome_colecao.findOne({filtro}): Busca o primeiro registro da coleção
+
+Operadores relacionais
+    $or $and
+    sintaxe: db.nome_colecao.find({$or: [{atributo1: valor1}, {atributo2: valor2}]})
+    sintaxe: db.nome_colecao.find({$and: [{atributo1: valor1}, {atributo2: valor2}]})
+
+Operador $exists: verifica se um atributo está contido em uma coleção
+        sintaxe: db.nome_colecao.find({nome_atributo: {$exists: true}})
+
+Consultas paginadas:
+    skip(nesimo_registro): realiza a consulta "pulando" o n-ésimo registro no resultado
+    limit(numero_registros): realiza a consulta limitando o número de regitros a serem considerados no resultado
+    count(): retorna o número de registros em uma coleção

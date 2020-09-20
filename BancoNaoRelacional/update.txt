@@ -1,0 +1,7 @@
+Sintaxe 1: db.nome_colecao.update({filtro}, {$set: {atributo1: valor1, atributo2: valor2, ..., atributon: valorn}})
+Sintaxe 2: db.nome_colecao.update({filtro}, {$push: {atributo1: valor1, atributo2: valor2, ..., atributon: valorn}})
+
+O operador $push adiciona um novo atributo a uma coleção, e o $set seta o valor de um atributo de uma coleção.
+
+Caso o atributo não exista, $set o adiciona a uma coleção. Caso contrário, substitui o valor 
+que já existe pelo novo valor para um atributo de uma coleção.

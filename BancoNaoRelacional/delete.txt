@@ -1,0 +1,2 @@
+Sintaxe: db.nome_colecao.remove({filtro}, limite_registros)
+

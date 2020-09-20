@@ -1,0 +1,21 @@
+ db.estados.aggregate([ {$project: {populacao: {$sum: "$Cidades.populacao"}, sigla: 1, _id: 0}}, 
+                        {$group: {_id: null, populacaoTotal: {$sum: "$populacao"}}}, 
+                        {$project: {_id: 0, populacaoTotal: 1}}])
+{ "populacaoTotal" : 3050919 }
+
+db.estados.find(null, {_id: 0, "Cidades.populacao": 1}).pretty()
+{
+        "Cidades" : [
+                {
+                        "populacao" : 1081000
+                },
+                {
+                        "populacao" : 1325000
+                },
+                {
+                        "populacao" : 644919
+                }
+        ]
+}
+{ }
+{ }

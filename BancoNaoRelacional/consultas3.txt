@@ -1,0 +1,5 @@
+db.estados.aggregate([ {$match: {"Cidades.nome": "Sorocaba"}}, --Buscando estados com cidade "Sorocaba"
+                       {$unwind: "$Cidades"}, --Desencapsulando o array de cidades contido em um único documento
+                       {$match: {"Cidades.nome": "Sorocaba"}}, --Buscando um documento individual (resultante do unwind) com cidade "Sorocaba" 
+                       {$project: {_id: "$Cidades._id"}}]) --Buscando pelo id de cidade
+.pretty()
