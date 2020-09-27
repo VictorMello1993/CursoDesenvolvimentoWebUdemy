@@ -25,6 +25,39 @@
     </nav>
     <div class="pagina"></div>
     <script>
-        // ...
+        function navegarViaAjax(url, seletor, push = true) {
+            if (!url || !seletor) return
+            const elemento = document.querySelector(seletor)
+            fetch(url)
+                .then(res => res.text())
+                .then(texto => {
+                    elemento.innerHTML = texto
+
+                    /*Quando o usuário clicar no botão de voltar, é preciso que a página atualize a URL para adicionar um estado (que seria a página de destino) 
+                    em um histórico de navegação*/
+                    if(push){
+                        history.pushState({seletor}, 'Mini SPA', url)
+                    }
+                }
+            )
+        }
+
+        document.querySelectorAll('[wm-link]').forEach(link => {
+            const url = link.attributes['wm-link'].value
+            const seletorDestino = link.attributes['wm-destino'].value
+
+            link.onclick = e => {
+                e.preventDefault()
+                navegarViaAjax(url, seletorDestino)
+            }
+        })
+
+        /*Quando o usuário já está na página de destino (atual), ao clicar no botão de voltar ou avançar no navegador para ser redirecionado para a página anterior, 
+        é preciso retirar a página de destino (atual) do histórico de navegação, que é uma estrutura em pilha*/
+        window.onpopstate = e => {
+            if(e.state){
+                navegarViaAjax(window.location.href, e.state.seletor, false)
+            }
+        }
     </script>
 </body>

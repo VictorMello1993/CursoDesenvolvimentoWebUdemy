@@ -10,8 +10,21 @@
 
 <body class="conteudo exercicio">
     <h1>Estados</h1>
-
+<!-- Trazendo os dados de todos os estados brasileiros em um JSON para renderizar 
+     em uma página HTML utilizando a biblioteca Axios, com requisição GET-->
     <script>
-        // ...
+        const url = 'dados/estados.json'
+        axios(url).then(res => {
+            const estados = res.data //JSON já convertido
+            const itens = estados.reduce((html, estado) => html + `<li>${estado.nome}</li>`, '')                        
+            document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+        })
+
+        /*A biblioteca Axios trabalha de maneira semelhante ao FetchAPI, pois 
+        se baseiam em promises para obter a resposta de uma requisição Ajax, mas
+        com a diferença de que quando obtém um JSON, internamente o Axios já
+        converte para um array de objetos, sem necessidade de chamar o método
+        res.json() como ocorre com Fetch*/
+        
     </script>
 </body>
