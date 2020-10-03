@@ -1,0 +1,10 @@
+									COMANDOS PM2
+									
+pm2 start nome_arquivo_principal.js -> Inicializa o servidor									
+pm2 monit -> Abre uma interface mostrando todas as informações sobre a aplicação em execução como nº de reinicializações, caminho do log de erros, usuário, id do processo, status (se está no ar ou offline), etc... 
+pm2 status -> mostra uma tela resumida das informações sobre a aplicação em execução
+pm2 show -> mostra os detalhes sobre a aplicação no ar, de forma semelhante ao pm2 monit
+pm2 restart -> reinicia a aplicação
+pm2 restart nome_aplicacao -> reinicia a aplicação especificando o seu nome
+pm2 stop -> Parar a aplicação
+pm2 kill -> Matar a instância do PM2, que não fica mais executando
