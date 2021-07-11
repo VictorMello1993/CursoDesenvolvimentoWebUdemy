@@ -11,7 +11,7 @@
         body {
             margin: 20px;
             height: calc(100% - 40px);
-            background-color: lightgray;
+            background-color: lightgray;            
         }
         
         div {
@@ -26,69 +26,70 @@
         body{
             display: grid;
 
-            /* Definindo o espaçamento entre as colunas de uma grid */
-            /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-            grid-template-columns: 50% 50%; /*A grid terá 2 colunas, cada uma ocupando 50% de espaço entre uma e outra*/
+            /* TEMPLATES PARA AS COLUNAS */
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+            grid-template-columns: 50% 50%; /*2 colunas com width: 50% do width do body*/
 
-            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%); /*O espaçamento será aplicado 4 vezes. Neste caso, terá 3 colunas, cada uma ocupando 8.33% do espaço em relação à largura da tela, multiplicando por 4, dará 12 colunas ao todo*/
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%); /* 3 colunas com width: 8.33% repetindo 4 vezes. Logo, teremos 12 colunas com width: 8.33% do width do body*/
+            /* Ou */
+            grid-template-columns: repeat(12, 8.33%); /* 12 colunas com width: 8.33% do width: do body*/
+            /* Ou */
+            grid-template-columns: repeat(11, 8.33%) 8.33%; /*11 colunas agrupadas com width: 8.33% do width: do body mais uma coluna com width: 8.33%. Logo, teremos 12 colunas com width: 8.33% do width do body*/
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+            
+            grid-template-columns: repeat(4, 8.33%); /* 4 colunas com width: 8.33% do width: do body*/
+            grid-template-columns: repeat(11, 100px) 100px; /*11 colunas agrupadas com width: 100px. Logo, teremos 12 colunas com width: 100px*/
+            grid-template-columns: 200px 20% 1fr; /* 3 colunas onde o primeiro possui width fixo de 200px, a segunda com 20% do width do body, e o terceiro terá o tamanho que sobrou para completar o width do body*/
+            grid-template-columns: 3fr 6fr 3fr; /*3 colunas onde a primeira possui 3/12 de tamanho do width do body, a segunda possui a metade do width do body, e a terceira mais 3/12 do width do body*/
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-            grid-template-columns: repeat(4, 8.33%); /*Neste caso, terá 4 colunas ao todo, cada uma ocupando 8.33% de espaço em relação à largura da tela*/
-
-            grid-template-columns: repeat(12, 8.33%); /*Neste caso, terá 12 colunas ao todo, cada uma ocupando 8.33% de espaço em relação à largura da tela*/
-
-            grid-template-columns: repeat(12, 8.33%); /*Neste caso, terá 12 colunas ao todo, cada uma ocupando 8.33% de espaço em relação à largura da tela*/
-
-            grid-template-columns: repeat(11, 100px) 100px; /*Neste caso, terá 11 colunas, cada uma com 100px, mais uma para completar 12 colunas adicionando 100px por fora do repeat, ocupando 100% do espaço da tela*/
-
-            grid-template-columns: 200px 20% 1fr; /*Neste caso, terá 3 colunas ao todo (em cada linha), sendo o primeiro tem 200px, a segunda tem 20% em relação à largura da tela (body, que é o pai de todas as div), e a terceira terá uma largura fracionada (subtraindo 200px - 20%)*/
-
-            grid-template-columns: 3fr 6fr 3fr; /*Neste caso, terá 12 colunas ao todo, com 3 colunas em cada linha, onde a primeira irá ocupar 3/12 (25%) do tamanho da tela, a segunda ocupará a metade (6/12) da tela, e a terceira ocupará 25% da tela*/
-
-        /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-            /* Definindo espaçamento entre as linhas de uma grid */
-        /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-             grid-template-rows: 50% 25% 12.5% 12.5%; /*Neste caso, a primeira linha ocupará 50% do espaço em relação à altura da tela, a segunda ocupará 25% da altura da tela, enquanto a terceira e a quarta ocuparão 12,5% da altura da tela  */
-
-            grid-template-rows: 100px 1fr;
-
-            grid-template-rows: 100px auto auto auto; /*Neste caso, a primeira linha terá 100px, e as outras terão o tamanho dividido igualitariamente. Ou seja, o tamanho é obtido subtraindo o tamanho total da linha com a primeira linha (pois está com 100px fixos) e dividir o resultado pela quantidade de linhas restantes*/
-
-
-
-        }        
+            /* TEMPLATES PARA AS LINHAS */
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+            grid-template-rows: 50% 25% 12.5% 12.5%; /*4 linhas onde: a primeira possui 50% do height do body, a segunda possui 25% do height do body, a terceira 12.5% do height do body, e a quarta também possui 12.5% do height do body*/
+            grid-template-rows: 100px 1fr; /*2 linhas onde a primeira ocupa height de 100px, e a segunda linha ocupará o máximo de tamanho possível baseado no tamanho do body (container pai), enquanto que a 2 últimas linhas irão utilizar o espaço restante para completar a altura do body*/
+            grid-template-rows: 100px auto auto auto; /* Primeira linha ocupará 100px de altura, e as outras 3 ocuparão espaços divididos de maneira igualitária para completar a altura do body*/           
+        }
 
         .d8{
-            /* No nível de colunas */
-            /* ------------------------------------------------------------------------------------------- */
-            grid-column-start: 2; /*a div d8 ocupará espaço onde começa com a linha 2 do eixo das colunas*/
-            grid-column-end: 4; /*Até a linha 4 do eixo das colunas*/
+            /* TEMPLATE PARA AS COLUNAS */
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+            grid-column-start: 2; /*inicia a grid a partir da coluna 2*/    
 
-            /* É equivalente a  */
-            /* grid-column-end: span 2; */            
-            /* ------------------------------------------------------------------------------------------- */
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+            grid-column-end: 4; /*termina a grid na coluna 4*/
+            /* Ou */
+            grid-column-end: span 2; /*Ocupa o espaço em 2 colunas a partir da coluna 4*/
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-            /* ------------------------------------------------------------------------------------------- */
-            /* No nível de linhas */            
-            grid-row-start: 3; /*A div d8 ocupará espaço onde começa com a linha 3 do eixo das linhas*/
-            grid-row-end: 5; /*Até a linha 5 do eixo das linhas*/
+            /* TEMPLATE PARA AS LINHAS */
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+            grid-row-start: 3; /*Inicia a grid a partir da linha 3*/
 
-            /* É equivalente a */
-            /* grid-row-end: span 2; */
-            /* ------------------------------------------------------------------------------------------- */
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+            grid-row-end: 5; /*Termina a grid na linha 5*/
+            /* Ou */
+            grid-row-end: span 2; /*Ocupa o espaço em 2 linhas a partir da linha 5*/
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+            /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
         }
-                
-        .d10, .d11{            
-            grid-column-start: 1;   
-            grid-column-end: 3;
 
-            /* Sobreposição de células. A div10 foi sobreposta pela div11 por ter ocupado a mesma posição*/
-            grid-row-start: 5;
-            grid-row-end: span 1;
+        .d10, .d11{
+            grid-column-start: 1; /*As divs d10 e d11 formarão uma grid a partir da coluna 1*/
+            grid-column-end: 3; /*As divs d10 e d11 terminam a grid na coluna 3*/
+
+            /* Sobreposição de células */
+            grid-row-start: 5; /*As divs d10 e d11 formarão uma grid a partir da linha 5*/
+            grid-row-end: span 1; /*As divs d10 e d11 terminarão a grid na linha 6*/
         }
 
         .d10{
-             z-index: 10; /*profundidade do elemento. Quanto maior z-index, maior a preferência do elemento sobrepor o outro */
+            z-index: 100; /*A profundidade da div d10 irá sobrepor a div d11*/
         }
+        
     </style>
 </head>
 
