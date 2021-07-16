@@ -18,14 +18,14 @@
         .flex-container{
             display: flex;
             height: 300px;
-            width: 600px;
+            width: 600px;            
         }
 
         /*Selecionado o terceiro filho da classe flex container*/
         .flex-container div:nth-child(3){
             background-color: indianred;
 
-            /*Todos os items do flex-box possuem a order zero (padrão) */
+            /*Todos os items do flex-box possuem a order: 0 (padrão) */
             /* Colocando a ordem 1, esse elemento  terá ordem maior do que os outros elementos e será exibido na última posição*/
             order: 1;
 
@@ -40,33 +40,48 @@
             /* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */
             /* aling-self: alinhando flex-itens (itens que foram marcados com display:flex) sempre no eixo transversal*/
             /* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */            
-            align-self: center; /*Alinhando para o centro do eixo transversal*/
-            align-self: flex-end; /*Alinhando no fim do eixo transversal*/
-            align-self: start; /*Alinhando no início do eixo transversal*/
-            align-self: stretch /*Alinhamento padrão do eixo transversal*/        
+
+            /*Alinhando para o centro do eixo transversal*/
+            align-self: center; 
+
+            /*Alinhando no fim do eixo transversal*/
+            align-self: flex-end; 
+
+            /*Alinhando no início do eixo transversal*/
+            align-self: start; 
+
+            /*Alinhamento padrão do eixo transversal*/        
+            align-self: stretch 
         }
 
         .flex-container div{
             width: 100px;
 
             /* flex-grow: o espaço vazio é preenchido de acordo com os pesos, e os elementos irão crescer de maneira uniforme.*/
-            flex-grow: 0; /*Os elementos não sofrerão alterações*/
+            /*Os elementos não sofrerão alterações*/
+            flex-grow: 0; 
 
             flex-grow: 1; 
         }
 
         .flex-container div:nth-child(1){
-            flex-grow: 2; /*Somente o primeiro elemento que terá seu tamanho dobrado, enquanto os outros terão peso 1 atribuído no seletor anterior*/            
+            /*Somente o primeiro elemento que terá seu tamanho dobrado, enquanto os outros terão peso 1 atribuído no seletor anterior*/            
+            flex-grow: 2; 
         }
 
         .flex-container{
             width: 300px;
 
             /* O quão encolhido fica os elementos proporcialmente */
-            flex-shrink: 1;
+            /* Todos os elementos ficarão com o encolhimento equivalente */
+            flex-shrink: 1; /*Padrão*/
         }
 
-        .flex-container div:nth-last-child(1){
+        .flex-container div:nth-child(1){
+            /* Obtém o espaço de cada div que precisa ser encolhido e divide pelo peso definido no flex-shrink. No caso, se 
+             somente a div 1 ficará com o peso 5, os outros três com peso 1, serão somados com o peso 5, totalizando de 8.
+             Logo, obtém os 100px definidos em cada div e divide-se por 8, ficando com 12.5px. Logo: as divs com flex-shrink: 1 ocuparão
+             87.5px, e a div 1 ficará com o espaço restante para completar toda a largura do flex container*/
             flex-shrink: 5;
         }
     </style>

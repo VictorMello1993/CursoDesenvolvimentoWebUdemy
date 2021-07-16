@@ -44,12 +44,13 @@
             flex-wrap: wrap-reverse;
 
             /* Mesma forma que o flex-wrap: wrap */
-            flex-wrap: row wrap;
+            flex-flow: row wrap;
 
             height: 200px;
             
             /* Inverte o wrap. Começa do último elemento e quebrar colunas mesmo tendo espaços vazios */
             flex-flow: column-reverse wrap;
+
             flex-flow: row wrap;
 
             /* Justificando o conteúdo do container a partir da origem do eixo principal*/
@@ -76,19 +77,37 @@
 
             /* align-items: alinha os itens sempre no eixo transversal */
 
-            align-items: stretch; /*Propriedade padrão de alinhamento dos itens no transversal*/
-            align-items: baseline; /*Os itens ficam alinhados a partir da base das fontes*/
-            align-items: flex-start; /*Os itens ficam alinhados a partir da origem do transversal*/
-            align-items: flex-end; /*Os itens ficam alinhados no fim do eixo transversal*/
-            align-items: center; /*Os itens ficam alinhados no centro do eixo transversal*/
+            /*Propriedade padrão de alinhamento dos itens no transversal*/
+            align-items: stretch; 
+
+            /*Os itens ficam alinhados a partir da base das fontes*/
+            align-items: baseline; 
+
+            /*Os itens ficam alinhados a partir da origem do transversal*/
+            align-items: flex-start; 
+
+            /*Os itens ficam alinhados no fim do eixo transversal*/
+            align-items: flex-end; 
+
+            /*Os itens ficam alinhados no centro do eixo transversal*/
+            align-items: center; 
 
             /* Isso só vai funcionar quando tiver mais de uma linha no container */
             /* ---------------------------------------------------------------------------------------------------------------------------------------*/
-            align-content: flex-start;  /*Alinha o conteúdo a partir do início do container*/       
-            align-content: flex-end;   /*Alinha o conteúdo a partir do fim do container*/
-            align-content: center;     /*Alinha o conteúdo a partir do centro*/  
-            align-content: space-around; /*Alinha o conteúdo para que envolta dos itens fica com espaço uniforme*/     
-            align-content: space-between /*Alinha o conteúdo para os itens fiquem com um espaço entre o outro*/     
+            /*Alinha o conteúdo a partir do início do container*/       
+            align-content: flex-start;  
+
+            /*Alinha o conteúdo a partir do fim do container*/
+            align-content: flex-end;   
+
+            /*Alinha o conteúdo a partir do centro*/  
+            align-content: center;     
+
+            /*Alinha o conteúdo para que envolta dos itens fica com espaço uniforme*/     
+            align-content: space-around; 
+
+            /*Alinha o conteúdo para os itens fiquem com um espaço entre o outro*/     
+            align-content: space-between 
             /* ---------------------------------------------------------------------------------------------------------------------------------------*/
 
             /* ---------------------------------------------------------------------------------------------------------------------------------------*/
@@ -108,6 +127,8 @@
         <div>8</div>
         <div>9</div>
         <div>10</div>
+        <div>11</div>
+        <div>12</div>
     </div>
     <script src="js/tag.js"></script>
 </body>
