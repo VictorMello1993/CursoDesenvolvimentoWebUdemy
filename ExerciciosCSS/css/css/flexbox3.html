@@ -24,10 +24,13 @@
             /* A largura de todos os items do flex-box é de 100 px (largura se o main-axis é linha*/
             /* Se definir flex-direction para column, a flex-basis irá representar a altura (height) de 100px para cada item do flex-box*/
             flex-basis: 100px; 
-            width: 200px; /*Vai perder a importância*/
+
+            /*Vai perder a importância, pois quando flex-basis é aplicado, ele é priorizado. Logo, width não será aplicado*/
+            width: 200px; 
         }
 
         .flex-container div:nth-child(4){
+            /* Propriedade shortcut */
             /* Ordem: grow > shrink  > basis */
             flex: 3 6 100px;
 
