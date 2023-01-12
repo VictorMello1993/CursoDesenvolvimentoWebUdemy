@@ -1,3 +1,8 @@
 {
-    "shs.mainFile": "position.html"
+  "shs.mainFile": "position.html",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#0F2A63",
+    "titleBar.activeBackground": "#153B8B",
+    "titleBar.activeForeground": "#F8FAFE"
+  }
 }

@@ -4,10 +4,9 @@
   "description": "arquivo de teste",
   "main": "funcionarios.js",
   "dependencies": {
-    "axios": "^0.18.0",
-    "npm": "^6.14.18"
+    "axios": "^1.2.2",
+    "npm": "^9.2.0"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
